@@ -1,223 +1,537 @@
 /* =====================================================
    KAS MOBILE STORE
-   SHOP PAGE FUNCTIONALITY
+   SHOP PAGE JAVASCRIPT
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    "use strict";
+
+    // ============================================
+    // 1. HTML ELEMENTS
+    // ============================================
 
     const productGrid = document.getElementById("shopProductGrid");
 
     if (!productGrid) return;
 
-    const products = Array.from(
-        productGrid.querySelectorAll(".product-card")
-    );
-
-    const categoryInputs = document.querySelectorAll(
-        'input[name="category"]'
-    );
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("productSearch");
 
     const maxPriceInput = document.getElementById("maxPrice");
     const inStockInput = document.getElementById("inStock");
 
-    const searchInput = document.getElementById("productSearch");
-    const searchForm = document.getElementById("searchForm");
-
     const sortSelect = document.getElementById("sortProducts");
 
-    const clearButton = document.getElementById("clearFilters");
+    const clearFiltersButton = document.getElementById("clearFilters");
 
-    const productCount = document.getElementById("productCount");
     const noProducts = document.getElementById("noProducts");
 
+    const currentYear = document.getElementById("currentYear");
 
-    // READ CATEGORY FROM URL
+    const productCards = Array.from(
+        productGrid.querySelectorAll(".product-card")
+    );
 
-    const urlParams = new URLSearchParams(window.location.search);
+    const wishlistKey = "kasMobileStoreWishlist";
 
-    const requestedCategory = urlParams.get("category");
-    const requestedSearch = urlParams.get("search");
+    // ============================================
+    // 2. PRODUCT INFORMATION
+    // ============================================
 
-    if (requestedCategory) {
+    function getProductName(card) {
 
-        const matchingCategory = Array.from(categoryInputs).find(
-            input => input.value === requestedCategory
+        return (
+            card.dataset.name ||
+            card.querySelector("h3")?.textContent.trim() ||
+            "Product"
         );
 
-        if (matchingCategory) {
-            matchingCategory.checked = true;
+    }
+
+    function getProductCategory(card) {
+
+        return (card.dataset.category || "").toLowerCase();
+
+    }
+
+    function getProductPrice(card) {
+
+        const price = Number(card.dataset.price);
+
+        // Zero means contact for price.
+        return Number.isFinite(price) && price > 0
+            ? price
+            : null;
+
+    }
+
+    // ============================================
+    // 3. WISHLIST STORAGE
+    // ============================================
+
+    function getWishlist() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem(wishlistKey) || "[]"
+            );
+
+        } catch (error) {
+
+            console.error("Wishlist error:", error);
+
+            return [];
+
         }
 
     }
 
-    if (requestedSearch && searchInput) {
-        searchInput.value = requestedSearch;
+    function saveWishlist(wishlist) {
+
+        localStorage.setItem(
+            wishlistKey,
+            JSON.stringify(wishlist)
+        );
+
     }
 
+    function updateWishlistButtons() {
 
-    // FILTER PRODUCTS
+        const wishlist = getWishlist();
+
+        productCards.forEach(card => {
+
+            const button = card.querySelector(".product-favourite");
+
+            if (!button) return;
+
+            const productId = card.dataset.id;
+
+            const saved = wishlist.includes(productId);
+
+            button.classList.toggle("is-favourite", saved);
+
+            button.setAttribute("aria-pressed", String(saved));
+
+            const icon = button.querySelector("i");
+
+            if (icon) {
+
+                icon.classList.toggle("fas", saved);
+
+                icon.classList.toggle("far", !saved);
+
+            }
+
+        });
+
+    }
+
+    // ============================================
+    // 4. WISHLIST BUTTON CLICK
+    // ============================================
+
+    productGrid.addEventListener("click", event => {
+
+        const button = event.target.closest(".product-favourite");
+
+        if (!button) return;
+
+        const card = button.closest(".product-card");
+
+        if (!card) return;
+
+        const productId = card.dataset.id;
+
+        if (!productId) return;
+
+        let wishlist = getWishlist();
+
+        if (wishlist.includes(productId)) {
+
+            wishlist = wishlist.filter(
+                id => id !== productId
+            );
+
+        } else {
+
+            wishlist.push(productId);
+
+        }
+
+        saveWishlist(wishlist);
+
+        updateWishlistButtons();
+
+    });
+
+    // ============================================
+    // 5. CATEGORY FILTER
+    // ============================================
+
+    let selectedCategory = "all";
+
+    document.querySelectorAll(
+        'input[name="category"]'
+    ).forEach(radio => {
+
+        radio.addEventListener("change", () => {
+
+            if (radio.checked) {
+
+                selectedCategory = radio.value.toLowerCase();
+
+                filterProducts();
+
+            }
+
+        });
+
+    });
+
+    // ============================================
+    // 6. PRODUCT SEARCH
+    // ============================================
+
+    if (searchForm) {
+
+        searchForm.addEventListener("submit", event => {
+
+            event.preventDefault();
+
+            filterProducts();
+
+        });
+
+    }
+
+    if (searchInput) {
+
+        searchInput.addEventListener("input", filterProducts);
+
+    }
+
+    // ============================================
+    // 7. PRICE FILTER
+    // ============================================
+
+    if (maxPriceInput) {
+
+        maxPriceInput.addEventListener(
+            "input",
+            filterProducts
+        );
+
+    }
+
+    // ============================================
+    // 8. STOCK FILTER
+    // ============================================
+
+    if (inStockInput) {
+
+        inStockInput.addEventListener(
+            "change",
+            filterProducts
+        );
+
+    }
+
+    // ============================================
+    // 9. SORT PRODUCTS
+    // ============================================
+
+    if (sortSelect) {
+
+        sortSelect.addEventListener(
+            "change",
+            filterProducts
+        );
+
+    }
+
+    function sortProducts(visibleProducts) {
+
+        const sortValue = sortSelect?.value || "default";
+
+        const sortedProducts = [...visibleProducts];
+
+        sortedProducts.sort((a, b) => {
+
+            const nameA = getProductName(a).toLowerCase();
+
+            const nameB = getProductName(b).toLowerCase();
+
+            const priceA = getProductPrice(a);
+
+            const priceB = getProductPrice(b);
+
+            if (sortValue === "name") {
+
+                return nameA.localeCompare(nameB);
+
+            }
+
+            if (sortValue === "low" || sortValue === "high") {
+
+                if (priceA === null && priceB === null) return 0;
+
+                if (priceA === null) return 1;
+
+                if (priceB === null) return -1;
+
+                return sortValue === "low"
+                    ? priceA - priceB
+                    : priceB - priceA;
+
+            }
+
+            return 0;
+
+        });
+
+        sortedProducts.forEach(card => {
+
+            productGrid.appendChild(card);
+
+        });
+
+    }
+
+    // ============================================
+    // 10. FILTER PRODUCTS
+    // ============================================
 
     function filterProducts() {
 
-        const selectedCategory = document.querySelector(
-            'input[name="category"]:checked'
-        )?.value || "all";
+        const searchTerm = (
+            searchInput?.value || ""
+        ).trim().toLowerCase();
 
-        const maximumPrice = Number(maxPriceInput.value);
+        const maxPrice = Number(maxPriceInput?.value);
 
-        const searchTerm = searchInput.value.toLowerCase().trim();
+        const hasMaxPrice =
+            maxPriceInput &&
+            maxPriceInput.value.trim() !== "" &&
+            Number.isFinite(maxPrice) &&
+            maxPrice >= 0;
 
-        const onlyInStock = inStockInput.checked;
+        const onlyInStock = Boolean(inStockInput?.checked);
 
-        let visibleProducts = products.filter(product => {
+        let visibleProducts = [];
 
-            const category = product.dataset.category;
+        productCards.forEach(card => {
 
-            const name = product.dataset.name.toLowerCase();
+            const name = getProductName(card).toLowerCase();
 
-            const price = Number(product.dataset.price);
+            const category = getProductCategory(card);
 
-            const stock = product.dataset.stock === "true";
+            const description = card.textContent.toLowerCase();
 
+            const price = getProductPrice(card);
+
+            const inStock =
+                card.dataset.stock === "true";
+
+            // Search
+            const matchesSearch =
+                !searchTerm ||
+                name.includes(searchTerm) ||
+                category.includes(searchTerm) ||
+                description.includes(searchTerm);
+
+            // Category
             const matchesCategory =
                 selectedCategory === "all" ||
                 category === selectedCategory;
 
+            // Price
+            // Unknown prices remain visible.
             const matchesPrice =
-                !maxPriceInput.value ||
-                (price > 0 && price <= maximumPrice);
+                !hasMaxPrice ||
+                price === null ||
+                price <= maxPrice;
 
-            const matchesSearch =
-                name.includes(searchTerm) ||
-                category.includes(searchTerm);
-
+            // Stock
             const matchesStock =
-                !onlyInStock || stock;
+                !onlyInStock || inStock;
 
-            return (
+            const showProduct =
+                matchesSearch &&
                 matchesCategory &&
                 matchesPrice &&
-                matchesSearch &&
-                matchesStock
-            );
+                matchesStock;
+
+            card.hidden = !showProduct;
+
+            if (showProduct) {
+
+                visibleProducts.push(card);
+
+            }
 
         });
 
+        sortProducts(visibleProducts);
 
-        // SORT PRODUCTS
+        // No products message
+        if (noProducts) {
 
-        const sortValue = sortSelect.value;
-
-        if (sortValue === "low") {
-
-            visibleProducts.sort((a, b) =>
-                Number(a.dataset.price) - Number(b.dataset.price)
-            );
+            noProducts.hidden = visibleProducts.length !== 0;
 
         }
 
-        if (sortValue === "high") {
+        // Product count
+        const productCount = document.getElementById("productCount");
 
-            visibleProducts.sort((a, b) =>
-                Number(b.dataset.price) - Number(a.dataset.price)
-            );
+        if (productCount) {
 
-        }
-
-        if (sortValue === "name") {
-
-            visibleProducts.sort((a, b) =>
-                a.dataset.name.localeCompare(b.dataset.name)
-            );
+            productCount.textContent =
+                `Showing ${visibleProducts.length} of ${productCards.length} products`;
 
         }
-
-
-        // DISPLAY PRODUCTS
-
-        products.forEach(product => {
-            product.style.display = "none";
-        });
-
-        visibleProducts.forEach(product => {
-            product.style.display = "";
-            productGrid.appendChild(product);
-        });
-
-
-        // PRODUCT COUNT
-
-        productCount.textContent =
-            `${visibleProducts.length} product(s) found`;
-
-
-        // EMPTY MESSAGE
-
-        noProducts.hidden = visibleProducts.length !== 0;
 
     }
 
+    // ============================================
+    // 11. CLEAR FILTERS
+    // ============================================
 
-    // CATEGORY CHANGE
+    if (clearFiltersButton) {
 
-    categoryInputs.forEach(input => {
+        clearFiltersButton.addEventListener("click", () => {
 
-        input.addEventListener("change", filterProducts);
+            selectedCategory = "all";
 
-    });
+            if (searchInput) searchInput.value = "";
 
+            if (maxPriceInput) maxPriceInput.value = "";
 
-    // PRICE CHANGE
+            if (inStockInput) inStockInput.checked = false;
 
-    maxPriceInput.addEventListener("input", filterProducts);
+            if (sortSelect) sortSelect.value = "default";
 
+            const allCategory = document.querySelector(
+                'input[name="category"][value="all"]'
+            );
 
-    // STOCK CHANGE
+            if (allCategory) {
 
-    inStockInput.addEventListener("change", filterProducts);
+                allCategory.checked = true;
 
+            }
 
-    // SEARCH
+            const url = new URL(window.location.href);
 
-    searchInput.addEventListener("input", filterProducts);
+            url.searchParams.delete("category");
 
-    searchForm.addEventListener("submit", event => {
+            window.history.replaceState({}, "", url);
 
-        event.preventDefault();
+            filterProducts();
 
-        filterProducts();
+        });
 
-    });
+    }
 
+    // ============================================
+    // 12. CATEGORY FROM URL
+    // ============================================
 
-    // SORT
+    const params = new URLSearchParams(
+        window.location.search
+    );
 
-    sortSelect.addEventListener("change", filterProducts);
+    const requestedCategory = (
+        params.get("category") || ""
+    ).toLowerCase();
 
+    const allowedCategories = [
+        "all",
+        "phones",
+        "audio",
+        "accessories",
+        "chargers"
+    ];
 
-    // CLEAR FILTERS
+    if (allowedCategories.includes(requestedCategory)) {
 
-    clearButton.addEventListener("click", () => {
+        selectedCategory = requestedCategory;
 
-        document.querySelector(
-            'input[name="category"][value="all"]'
-        ).checked = true;
+        const categoryRadio = document.querySelector(
+            `input[name="category"][value="${requestedCategory}"]`
+        );
 
-        maxPriceInput.value = "";
+        if (categoryRadio) {
 
-        inStockInput.checked = false;
+            categoryRadio.checked = true;
 
-        searchInput.value = "";
+        }
 
-        sortSelect.value = "default";
+    }
 
-        filterProducts();
+    // ============================================
+    // 13. MOBILE NAVIGATION
+    // ============================================
 
-    });
+    const menuToggle = document.getElementById("menuToggle");
 
+    const mainNavigation = document.getElementById("mainNavigation");
 
-    // INITIAL DISPLAY
+    if (menuToggle && mainNavigation) {
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                mainNavigation.classList.contains("active");
+
+            mainNavigation.classList.toggle("active", !isOpen);
+
+            mainNavigation.classList.toggle("open", !isOpen);
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+        });
+
+        mainNavigation.querySelectorAll("a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mainNavigation.classList.remove("active", "open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+    }
+
+    // ============================================
+    // 14. CURRENT YEAR
+    // ============================================
+
+    if (currentYear) {
+
+        currentYear.textContent = new Date().getFullYear();
+
+    }
+
+    // ============================================
+    // 15. INITIALIZE SHOP
+    // ============================================
+
+    updateWishlistButtons();
 
     filterProducts();
+
+    console.log("KAS MOBILE STORE shop.js loaded successfully.");
 
 });
