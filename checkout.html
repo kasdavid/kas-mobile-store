@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<meta name="description" content="Complete your KAS MOBILE STORE order and select your delivery location.">
+
+<title>Checkout | KAS MOBILE STORE</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+
+<!-- Checkout CSS -->
+<link rel="stylesheet" href="checkout.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- ANIMATED BACKGROUND -->
+<div class="animated-word-background" aria-hidden="true">
+    <div class="word-track">
+        <div class="word-group">
+            <span>KAS MOBILE STORE</span>
+            <span>FAST DELIVERY</span>
+            <span>SHOP WITH CONFIDENCE</span>
+            <span>QUALITY ACCESSORIES</span>
+        </div>
+        <div class="word-group">
+            <span>KAS MOBILE STORE</span>
+            <span>FAST DELIVERY</span>
+            <span>SHOP WITH CONFIDENCE</span>
+            <span>QUALITY ACCESSORIES</span>
+        </div>
+    </div>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+    <p>
+        <i class="fas fa-truck-fast"></i>
+        Secure checkout and convenient delivery across Zambia.
+    </p>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            <i class="fas fa-mobile-screen-button"></i>
+            <span>KAS <strong>MOBILE STORE</strong></span>
+        </a>
+
+        <div class="header-actions">
+
+            <a href="account.html" class="header-action">
+                <i class="fas fa-user"></i>
+                <span>Account</span>
+            </a>
+
+            <a href="shop.html" class="header-action">
+                <i class="fas fa-store"></i>
+                <span>Continue Shopping</span>
+            </a>
+
+        </div>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </div>
+
+    <nav class="main-navigation" id="mainNavigation">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="mobile-phones.html" class="nav-link">Mobile Phones</a></li>
+            <li><a href="accessories.html" class="nav-link">Accessories</a></li>
+            <li><a href="audio.html" class="nav-link">Audio</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- CHECKOUT HERO -->
+<section class="checkout-hero">
+    <div class="checkout-hero-content">
+        <span class="section-label">ORDER PLACEMENT</span>
+        <h1>Complete Your <span>Order</span></h1>
+        <p>Provide your delivery information and confirm your location.</p>
+
+        <div class="checkout-breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Checkout</span>
+        </div>
+    </div>
+</section>
+
+<!-- CHECKOUT SECTION -->
+<main class="checkout-section">
+
+    <div class="checkout-container">
+
+        <!-- CHECKOUT FORM -->
+        <section class="checkout-form-card">
+
+            <div class="checkout-heading">
+                <span class="checkout-step">01</span>
+                <div>
+                    <h2>Delivery Information</h2>
+                    <p>Enter the details of the person receiving the order.</p>
+                </div>
+            </div>
+
+            <form id="checkoutForm">
+
+                <div class="checkout-form-grid">
+
+                    <div class="form-group">
+                        <label for="customerName">Full Name *</label>
+                        <input type="text" id="customerName"
+                               name="customerName"
+                               placeholder="Enter your full name"
+                               autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number *</label>
+                        <input type="tel" id="customerPhone"
+                               name="customerPhone"
+                               placeholder="+260 97X XXX XXX"
+                               autocomplete="tel" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="customerEmail">Email Address</label>
+                        <input type="email" id="customerEmail"
+                               name="customerEmail"
+                               placeholder="Enter your email address"
+                               autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deliveryProvince">Province *</label>
+                        <select id="deliveryProvince" name="province" required>
+                            <option value="">Select Province</option>
+                            <option>Lusaka</option>
+                            <option>Copperbelt</option>
+                            <option>Central</option>
+                            <option>Eastern</option>
+                            <option>Southern</option>
+                            <option>Northern</option>
+                            <option>Muchinga</option>
+                            <option>Luapula</option>
+                            <option>North-Western</option>
+                            <option>Western</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deliveryTown">Town / District *</label>
+                        <input type="text" id="deliveryTown"
+                               name="town"
+                               placeholder="e.g. Lusaka, Kabwe"
+                               required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="deliveryAddress">Delivery Address *</label>
+                        <textarea id="deliveryAddress"
+                                  name="address"
+                                  rows="3"
+                                  placeholder="House number, street, area or landmark"
+                                  required></textarea>
+                    </div>
+
+                </div>
+
+                <!-- GPS LOCATION -->
+                <div class="gps-card">
+
+                    <div class="gps-heading">
+                        <div class="gps-icon">
+                            <i class="fas fa-location-crosshairs"></i>
+                        </div>
+
+                        <div>
+                            <h3>Share Your GPS Location</h3>
+                            <p>Help our delivery team find your location.</p>
+                        </div>
+                    </div>
+
+                    <button type="button" id="getLocationBtn" class="gps-button">
+                        <i class="fas fa-location-dot"></i>
+                        Use My Current Location
+                    </button>
+
+                    <div id="gpsStatus" class="gps-status" role="status" aria-live="polite">
+                        Your GPS location has not been selected.
+                    </div>
+
+                    <div id="gpsCoordinates" class="gps-coordinates" hidden>
+                        <p><strong>Latitude:</strong> <span id="latitude"></span></p>
+                        <p><strong>Longitude:</strong> <span id="longitude"></span></p>
+                        <a id="openMapLink" href="#" target="_blank" rel="noopener">
+                            <i class="fas fa-map"></i> View selected location
+                        </a>
+                    </div>
+
+                    <p class="gps-privacy">
+                        <i class="fas fa-shield-halved"></i>
+                        Your location is requested only when you press the GPS button.
+                    </p>
+
+                </div>
+
+                <!-- DELIVERY NOTES -->
+                <div class="form-group full-width delivery-notes">
+                    <label for="deliveryNotes">Additional Delivery Instructions</label>
+                    <textarea id="deliveryNotes"
+                              name="deliveryNotes"
+                              rows="3"
+                              placeholder="Optional: directions, nearby landmarks or other instructions"></textarea>
+                </div>
+
+                <!-- PAYMENT METHOD -->
+                <div class="payment-section">
+
+                    <div class="checkout-heading">
+                        <span class="checkout-step">02</span>
+                        <div>
+                            <h2>Payment Method</h2>
+                            <p>Select your preferred payment method.</p>
+                        </div>
+                    </div>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod"
+                               value="Cash on Delivery" required>
+                        <span class="payment-option-content">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>
+                                <strong>Cash on Delivery</strong>
+                                <small>Pay when your order arrives, where available.</small>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod"
+                               value="Mobile Money">
+                        <span class="payment-option-content">
+                            <i class="fas fa-mobile-screen-button"></i>
+                            <span>
+                                <strong>Mobile Money</strong>
+                                <small>Payment instructions will be confirmed by the store.</small>
+                            </span>
+                        </span>
+                    </label>
+
+                </div>
+
+                <div id="checkoutStatus" class="checkout-status"
+                     role="status" aria-live="polite"></div>
+
+                <button type="submit" id="placeOrderBtn" class="place-order-button">
+                    <i class="fas fa-lock"></i>
+                    Place Order
+                </button>
+
+                <p class="checkout-security">
+                    <i class="fas fa-shield-halved"></i>
+                    Your delivery details should be handled securely.
+                </p>
+
+            </form>
+
+        </section>
+
+        <!-- ORDER SUMMARY -->
+        <aside class="order-summary-card">
+
+            <div class="summary-heading">
+                <i class="fas fa-shopping-bag"></i>
+                <h2>Order Summary</h2>
+            </div>
+
+            <div id="checkoutCartItems" class="checkout-cart-items">
+                <p class="summary-empty">
+                    Your cart items will appear here.
+                </p>
+            </div>
+
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <strong id="checkoutSubtotal">K0.00</strong>
+            </div>
+
+            <div class="summary-line">
+                <span>Delivery Fee</span>
+                <strong id="checkoutDelivery">To be confirmed</strong>
+            </div>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <strong id="checkoutTotal">To be confirmed</strong>
+            </div>
+
+            <div class="summary-help">
+                <i class="fas fa-circle-info"></i>
+                <p>Delivery charges and final order total will be confirmed by the store.</p>
+            </div>
+
+            <a href="shop.html" class="back-to-shop">
+                <i class="fas fa-arrow-left"></i>
+                Continue Shopping
+            </a>
+
+        </aside>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-bottom">
+        <p>
+            &copy; <span id="currentYear"></span>
+            KAS MOBILE STORE. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="app.js"></script>
+<script src="checkout.js"></script>
+
+
+</body>
+</html>

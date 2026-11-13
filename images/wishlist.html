@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="View your saved favourite products at KAS MOBILE STORE.">
+
+    <title>My Wishlist | KAS MOBILE STORE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <!-- Wishlist CSS -->
+    <link rel="stylesheet" href="wishlist.css">
+
+</head>
+
+<body>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <p>
+            <i class="fas fa-truck-fast"></i>
+            Welcome to KAS MOBILE STORE — Quality Technology, Better Prices.
+        </p>
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                KAS <span>MOBILE</span>
+            </a>
+
+            <div class="header-actions">
+
+                <a href="wishlist.html" class="header-icon active">
+                    <i class="fas fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+
+                <a href="login.html" class="header-icon">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="main-navigation">
+
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="deals.html">Deals</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- WISHLIST HERO -->
+    <section class="wishlist-hero">
+
+        <div class="wishlist-hero-content">
+
+            <span class="wishlist-label">
+                YOUR PERSONAL COLLECTION
+            </span>
+
+            <h1>My <span>Wishlist</span></h1>
+
+            <p>
+                Keep your favourite technology products in one place.
+                Discover them again whenever you're ready.
+            </p>
+
+            <div class="wishlist-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-angle-right"></i>
+                <span>Wishlist</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WISHLIST SECTION -->
+    <main class="wishlist-section">
+
+        <div class="wishlist-heading">
+
+            <div>
+                <span>YOUR FAVOURITES</span>
+                <h2>Saved Products</h2>
+            </div>
+
+            <a href="shop.html" class="continue-shopping">
+                Continue Shopping
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- WISHLIST PRODUCT COUNT -->
+        <div class="wishlist-information">
+
+            <p>
+                <i class="fas fa-heart"></i>
+                <span id="wishlistCount">0</span> Saved Products
+            </p>
+
+            <button id="clearWishlist" class="clear-wishlist-btn">
+                <i class="fas fa-trash"></i>
+                Clear Wishlist
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS WILL APPEAR HERE -->
+        <div class="wishlist-grid" id="wishlistGrid">
+
+            <!-- JavaScript will display saved products here -->
+
+        </div>
+
+
+        <!-- EMPTY WISHLIST -->
+        <div class="wishlist-empty" id="wishlistEmpty">
+
+            <div class="empty-heart">
+                <i class="far fa-heart"></i>
+            </div>
+
+            <h2>Your Wishlist Is Empty</h2>
+
+            <p>
+                You haven't saved any products yet.
+                Explore our store and add your favourite products.
+            </p>
+
+            <a href="shop.html" class="wishlist-shop-btn">
+                <i class="fas fa-shopping-bag"></i>
+                Explore Products
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="footer-content">
+
+            <h2>KAS <span>MOBILE STORE</span></h2>
+
+            <p>
+                Your destination for quality mobile phones,
+                accessories and modern technology.
+            </p>
+
+            <div class="footer-socials">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://wa.me/260977683656" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+            <p class="copyright">
+                &copy; 2026 KAS MOBILE STORE. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- WISHLIST JAVASCRIPT -->
+    <script src="wishlist.js"></script>
+
+</body>
+
+</html>

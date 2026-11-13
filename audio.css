@@ -1,0 +1,1284 @@
+/* =========================================================
+   KAS MOBILE STORE
+   PREMIUM AUDIO PAGE
+   COMPLETE ADVANCED STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --audio-primary: #071b35;
+    --audio-secondary: #0c2e52;
+    --audio-dark: #061426;
+
+    --audio-accent: #00a8ff;
+    --audio-accent-light: #45c4ff;
+
+    --audio-white: #ffffff;
+    --audio-gray: #a8b7c9;
+    --audio-muted: #72849b;
+
+    --audio-border: rgba(255, 255, 255, 0.09);
+
+    --audio-card: rgba(12, 46, 82, 0.55);
+
+    --audio-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25);
+
+    --audio-radius: 16px;
+
+    --audio-transition: all 0.35s ease;
+}
+
+
+/* =========================================================
+   2. GENERAL AUDIO PAGE
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.audio-hero,
+.audio-categories,
+.audio-products-section {
+    position: relative;
+    isolation: isolate;
+}
+
+.audio-hero *,
+.audio-categories *,
+.audio-products-section * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   3. AUDIO HERO SECTION
+========================================================= */
+
+.audio-hero {
+
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 8%;
+
+    overflow: hidden;
+
+    background-color: var(--audio-dark);
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(6, 20, 38, 0.99) 0%,
+            rgba(6, 20, 38, 0.93) 32%,
+            rgba(6, 20, 38, 0.65) 60%,
+            rgba(6, 20, 38, 0.22) 100%
+        ),
+
+        url("assets/images/audio/headphones.jpg");
+
+    background-size: cover;
+
+    background-position: center, right center;
+
+    background-repeat: no-repeat;
+
+    border-bottom: 1px solid var(--audio-border);
+
+}
+
+
+/* HERO BLUE GLOW */
+
+.audio-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -100px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: rgba(0, 168, 255, 0.13);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+/* =========================================================
+   4. HERO CONTENT
+========================================================= */
+
+.audio-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 720px;
+
+    animation: audioFadeIn 1s ease both;
+
+}
+
+
+/* =========================================================
+   5. AUDIO LABEL
+========================================================= */
+
+.audio-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--audio-accent-light);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    padding: 12px 18px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(0, 168, 255, 0.35);
+
+    background: rgba(0, 168, 255, 0.10);
+
+    border-radius: 40px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 25px rgba(0, 168, 255, 0.08);
+
+}
+
+.audio-label i {
+
+    font-size: 16px;
+
+    animation: audioPulse 2s infinite;
+
+}
+
+
+/* =========================================================
+   6. HERO HEADING
+========================================================= */
+
+.audio-hero h1 {
+
+    color: var(--audio-white);
+
+    font-size: clamp(40px, 5.5vw, 72px);
+
+    line-height: 1.12;
+
+    font-weight: 900;
+
+    margin-bottom: 24px;
+
+    letter-spacing: -2.5px;
+
+}
+
+.audio-hero h1 span {
+
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #00a8ff,
+        #70d5ff,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+/* =========================================================
+   7. HERO DESCRIPTION
+========================================================= */
+
+.audio-hero p {
+
+    max-width: 590px;
+
+    color: #c0cede;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin-bottom: 32px;
+
+}
+
+
+/* =========================================================
+   8. HERO BUTTONS
+========================================================= */
+
+.audio-hero-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+.audio-hero-buttons .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    padding: 16px 27px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: var(--audio-transition);
+
+}
+
+
+/* PRIMARY BUTTON */
+
+.audio-hero-buttons .btn-primary {
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #008ee8,
+        #00b7ff
+    );
+
+    border: 1px solid transparent;
+
+    box-shadow:
+        0 8px 25px rgba(0, 168, 255, 0.25);
+
+}
+
+.audio-hero-buttons .btn-primary:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 168, 255, 0.4);
+
+}
+
+
+/* OUTLINE BUTTON */
+
+.audio-hero-buttons .btn-outline {
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(10px);
+
+}
+
+.audio-hero-buttons .btn-outline:hover {
+
+    color: var(--audio-accent-light);
+
+    border-color: var(--audio-accent);
+
+    background: rgba(0, 168, 255, 0.10);
+
+    transform: translateY(-5px);
+
+}
+
+
+/* =========================================================
+   9. AUDIO CATEGORY SECTION
+========================================================= */
+
+.audio-categories {
+
+    padding: 85px 7%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071b35,
+            #081a30
+        );
+
+}
+
+.audio-section-heading {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+}
+
+.audio-section-label {
+
+    display: inline-block;
+
+    color: var(--audio-accent-light);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+}
+
+.audio-section-heading h2 {
+
+    color: var(--audio-white);
+
+    font-size: clamp(28px, 4vw, 42px);
+
+    font-weight: 900;
+
+    margin-bottom: 15px;
+
+}
+
+.audio-section-heading p {
+
+    color: var(--audio-gray);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* CATEGORY GRID */
+
+.audio-category-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+
+}
+
+
+/* CATEGORY CARD */
+
+.audio-category-card {
+
+    position: relative;
+
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: var(--audio-white);
+
+    background: linear-gradient(
+        145deg,
+        rgba(12, 46, 82, 0.9),
+        rgba(7, 27, 53, 0.95)
+    );
+
+    border: 1px solid var(--audio-border);
+
+    border-radius: var(--audio-radius);
+
+    overflow: hidden;
+
+    transition: var(--audio-transition);
+
+}
+
+.audio-category-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 168, 255, 0.18),
+        transparent 70%
+    );
+
+    opacity: 0;
+
+    transition: var(--audio-transition);
+
+}
+
+.audio-category-card:hover {
+
+    transform: translateY(-9px);
+
+    border-color: var(--audio-accent);
+
+    box-shadow:
+        0 15px 40px rgba(0, 168, 255, 0.12);
+
+}
+
+.audio-category-card:hover::before {
+
+    opacity: 1;
+
+}
+
+.audio-category-card i {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 42px;
+
+    color: var(--audio-accent-light);
+
+    margin-bottom: 20px;
+
+    transition: var(--audio-transition);
+
+}
+
+.audio-category-card:hover i {
+
+    transform: scale(1.15);
+
+}
+
+.audio-category-card h3 {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+}
+
+.audio-category-card p {
+
+    position: relative;
+
+    z-index: 1;
+
+    color: var(--audio-gray);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   10. AUDIO PRODUCTS SECTION
+========================================================= */
+
+.audio-products-section {
+
+    padding: 85px 7%;
+
+    background: #061426;
+
+}
+
+.audio-products-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+
+}
+
+.audio-products-title h2 {
+
+    color: var(--audio-white);
+
+    font-size: clamp(27px, 4vw, 40px);
+
+    font-weight: 900;
+
+    margin-bottom: 10px;
+
+}
+
+.audio-products-title p {
+
+    color: var(--audio-gray);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   11. PRODUCT FILTER BUTTONS
+========================================================= */
+
+.audio-filter-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+}
+
+.audio-category-filter {
+
+    padding: 11px 19px;
+
+    color: var(--audio-gray);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid var(--audio-border);
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--audio-transition);
+
+}
+
+.audio-category-filter:hover,
+.audio-category-filter.active {
+
+    color: #ffffff;
+
+    background: var(--audio-accent);
+
+    border-color: var(--audio-accent);
+
+    box-shadow:
+        0 5px 20px rgba(0, 168, 255, 0.2);
+
+}
+
+
+/* =========================================================
+   12. PRODUCT SORTING
+========================================================= */
+
+.audio-sort-container {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+
+}
+
+.audio-sort-container label {
+
+    color: var(--audio-gray);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+.audio-sort-container select {
+
+    padding: 12px 16px;
+
+    color: #ffffff;
+
+    background: #0c2e52;
+
+    border: 1px solid var(--audio-border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    cursor: pointer;
+
+}
+
+.audio-sort-container select option {
+
+    color: #ffffff;
+
+    background: #0c2e52;
+
+}
+
+
+/* =========================================================
+   13. PRODUCT GRID
+========================================================= */
+
+.audio-product-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+/* =========================================================
+   14. PRODUCT CARD
+========================================================= */
+
+.audio-product-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #0c2e52,
+        #081b32
+    );
+
+    border: 1px solid var(--audio-border);
+
+    border-radius: 15px;
+
+    transition: var(--audio-transition);
+
+}
+
+.audio-product-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(0, 168, 255, 0.5);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* PRODUCT IMAGE */
+
+.audio-product-image {
+
+    position: relative;
+
+    height: 230px;
+
+    overflow: hidden;
+
+    background: #102d4b;
+
+}
+
+.audio-product-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+
+}
+
+.audio-product-card:hover .audio-product-image img {
+
+    transform: scale(1.08);
+
+}
+
+
+/* PRODUCT BADGE */
+
+.audio-product-badge {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    z-index: 2;
+
+    padding: 7px 12px;
+
+    color: #ffffff;
+
+    background: var(--audio-accent);
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+
+/* WISHLIST BUTTON */
+
+.audio-wishlist-btn {
+
+    position: absolute;
+
+    top: 13px;
+
+    right: 13px;
+
+    z-index: 3;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: var(--audio-transition);
+
+}
+
+.audio-wishlist-btn:hover,
+.audio-wishlist-btn.active {
+
+    color: #ffffff;
+
+    background: #e63963;
+
+    border-color: #e63963;
+
+}
+
+
+/* PRODUCT DETAILS */
+
+.audio-product-info {
+
+    padding: 20px;
+
+}
+
+.audio-product-category {
+
+    display: block;
+
+    color: var(--audio-accent-light);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+}
+
+.audio-product-info h3 {
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+
+}
+
+.audio-product-description {
+
+    color: var(--audio-gray);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* PRODUCT PRICE */
+
+.audio-product-price {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+}
+
+.audio-product-price strong {
+
+    color: var(--audio-accent-light);
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+}
+
+.audio-product-price del {
+
+    color: var(--audio-muted);
+
+    font-size: 12px;
+
+}
+
+
+/* PRODUCT ACTIONS */
+
+.audio-product-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.audio-product-actions button,
+.audio-product-actions a {
+
+    flex: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 10px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: var(--audio-transition);
+
+}
+
+
+/* WHATSAPP ORDER BUTTON */
+
+.audio-whatsapp-order {
+
+    color: #ffffff;
+
+    background: #128c4a;
+
+    border: 1px solid #128c4a;
+
+}
+
+.audio-whatsapp-order:hover {
+
+    background: #075e32;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================================================
+   15. SCROLL ANIMATIONS
+========================================================= */
+
+.audio-product-card,
+.audio-category-card {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+}
+
+.audio-product-card.visible,
+.audio-category-card.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   16. ANIMATIONS
+========================================================= */
+
+@keyframes audioFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes audioPulse {
+
+    0%, 100% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        transform: scale(1.2);
+
+        opacity: 0.6;
+
+    }
+
+}
+
+
+/* =========================================================
+   17. RESPONSIVE DESIGN - TABLETS
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .audio-hero {
+
+        min-height: 540px;
+
+        padding: 80px 6%;
+
+    }
+
+    .audio-category-grid,
+    .audio-product-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* =========================================================
+   18. RESPONSIVE DESIGN - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .audio-hero {
+
+        min-height: 560px;
+
+        padding: 75px 6%;
+
+        background-image:
+
+            linear-gradient(
+                90deg,
+                rgba(6, 20, 38, 0.94),
+                rgba(6, 20, 38, 0.68)
+            ),
+
+            url("assets/images/audio/headphones.jpg");
+
+        background-size: cover, cover;
+
+        background-position: center, 65% center;
+
+    }
+
+    .audio-hero-content {
+
+        max-width: 100%;
+
+    }
+
+    .audio-hero h1 {
+
+        font-size: clamp(36px, 8vw, 52px);
+
+        letter-spacing: -1.5px;
+
+    }
+
+    .audio-hero p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+    }
+
+    .audio-categories,
+    .audio-products-section {
+
+        padding: 65px 5%;
+
+    }
+
+    .audio-products-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+/* =========================================================
+   19. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .audio-hero {
+
+        min-height: 510px;
+
+        padding: 65px 20px;
+
+    }
+
+    .audio-label {
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+
+        padding: 10px 13px;
+
+    }
+
+    .audio-hero h1 {
+
+        font-size: 36px;
+
+    }
+
+    .audio-hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .audio-hero-buttons .btn {
+
+        width: 100%;
+
+    }
+
+    .audio-category-grid,
+    .audio-product-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .audio-category-card {
+
+        min-height: 180px;
+
+    }
+
+    .audio-product-image {
+
+        height: 250px;
+
+    }
+
+    .audio-filter-buttons {
+
+        gap: 8px;
+
+    }
+
+    .audio-category-filter {
+
+        padding: 10px 13px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+/* =========================================================
+   20. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}

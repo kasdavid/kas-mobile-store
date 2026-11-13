@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta name="description" content="KAS MOBILE STORE Admin Dashboard - Manage products, orders and customers.">
+
+<title>Admin Dashboard | KAS MOBILE STORE</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="responsive.css">
+
+<!-- Admin CSS -->
+<link rel="stylesheet" href="admin.css">
+
+
+</head>
+
+<body class="admin-page">
+
+<!-- ======================================
+     ADMIN SIDEBAR
+======================================= -->
+
+<aside class="admin-sidebar" id="adminSidebar">
+
+    <div class="admin-logo">
+
+        <div class="admin-logo-icon">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+        </div>
+
+        <div>
+            <h2>KAS MOBILE</h2>
+            <span>STORE ADMIN</span>
+        </div>
+
+    </div>
+
+
+    <!-- ADMIN PROFILE -->
+
+    <div class="admin-profile">
+
+        <div class="admin-avatar">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+
+        <div class="admin-profile-info">
+            <h4>Store Administrator</h4>
+            <p>Administrator</p>
+        </div>
+
+        <span class="admin-online"></span>
+
+    </div>
+
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <nav class="admin-navigation">
+
+        <p class="admin-nav-title">MAIN MENU</p>
+
+        <a href="#dashboard" class="admin-nav-link active">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#mediaLibrary" class="admin-nav-link">
+    <i class="fa-solid fa-photo-film"></i>
+    <span>Media Library</span>
+</a>
+
+        <a href="#orders" class="admin-nav-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Orders</span>
+            <span class="nav-count">0</span>
+        </a>
+
+        <a href="#customers" class="admin-nav-link">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+        </a>
+
+
+        <p class="admin-nav-title">MANAGEMENT</p>
+
+        <a href="#inventory" class="admin-nav-link">
+            <i class="fa-solid fa-warehouse"></i>
+            <span>Inventory</span>
+        </a>
+
+        <a href="#payments" class="admin-nav-link">
+            <i class="fa-solid fa-credit-card"></i>
+            <span>Payments</span>
+        </a>
+
+        <a href="#reports" class="admin-nav-link">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Reports</span>
+        </a>
+
+
+        <p class="admin-nav-title">SETTINGS</p>
+
+        <a href="#settings" class="admin-nav-link">
+            <i class="fa-solid fa-gear"></i>
+            <span>Store Settings</span>
+        </a>
+
+        <a href="index.html" class="admin-nav-link">
+            <i class="fa-solid fa-globe"></i>
+            <span>Visit Website</span>
+        </a>
+
+    </nav>
+
+
+    <!-- LOGOUT -->
+
+    <div class="admin-sidebar-bottom">
+
+        <button type="button" class="admin-logout" id="adminLogout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ======================================
+     ADMIN MAIN CONTENT
+======================================= -->
+
+<main class="admin-main">
+
+
+    <!-- TOP HEADER -->
+
+    <header class="admin-topbar">
+
+        <div class="admin-topbar-left">
+
+            <button class="admin-menu-toggle" id="adminMenuToggle" aria-label="Toggle admin menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div>
+                <h1>Dashboard Overview</h1>
+                <p>Welcome to your KAS MOBILE STORE management panel.</p>
+            </div>
+
+        </div>
+
+
+        <div class="admin-topbar-right">
+
+            <button class="admin-icon-button" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="admin-topbar-user">
+
+                <div class="admin-avatar small">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div>
+                    <h4>Administrator</h4>
+                    <span>Store Owner</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- DASHBOARD SECTION -->
+
+    <section class="admin-content" id="dashboard">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="admin-section-heading">
+
+            <div>
+                <span class="admin-eyebrow">STORE PERFORMANCE</span>
+                <h2>Business Overview</h2>
+                <p>Monitor your store's activity and performance.</p>
+            </div>
+
+            <div class="admin-date">
+                <i class="fa-regular fa-calendar"></i>
+                <span id="adminCurrentDate">Loading date...</span>
+            </div>
+
+        </div>
+
+
+
+        <!-- STATISTICS CARDS -->
+
+        <div class="admin-stats-grid">
+
+
+            <div class="admin-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Total Revenue</span>
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                </div>
+
+                <h3 id="totalRevenue">K0.00</h3>
+
+                <p class="stat-description">
+                    Revenue from recorded sales
+                </p>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Total Orders</span>
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+                <h3 id="totalOrders">0</h3>
+
+                <p class="stat-description">
+                    All recorded orders
+                </p>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Total Customers</span>
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                </div>
+
+                <h3 id="totalCustomers">0</h3>
+
+                <p class="stat-description">
+                    Registered customers
+                </p>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <div class="stat-card-top">
+                    <span>Total Products</span>
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                </div>
+
+                <h3 id="totalProducts">0</h3>
+
+                <p class="stat-description">
+                    Products in your catalogue
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="admin-quick-actions">
+
+            <div class="admin-card-heading">
+                <div>
+                    <h3>Quick Actions</h3>
+                    <p>Manage your store efficiently.</p>
+                </div>
+            </div>
+
+
+            <div class="quick-action-grid">
+
+                <a href="#products" class="quick-action-card">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Add Product</span>
+                </a>
+
+                <a href="#orders" class="quick-action-card">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Manage Orders</span>
+                </a>
+
+                <a href="#customers" class="quick-action-card">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>View Customers</span>
+                </a>
+
+                <a href="#reports" class="quick-action-card">
+                    <i class="fa-solid fa-file-chart-column"></i>
+                    <span>View Reports</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RECENT ORDERS -->
+
+        <div class="admin-panel" id="orders">
+
+            <div class="admin-card-heading">
+
+                <div>
+                    <h3>Recent Orders</h3>
+                    <p>Review your latest customer purchases.</p>
+                </div>
+
+                <a href="#orders" class="admin-view-all">
+                    View All <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recentOrdersTable">
+
+                        <tr>
+                            <td colspan="6" class="empty-table">
+                                <i class="fa-solid fa-inbox"></i>
+                                <p>No orders recorded yet.</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCTS SECTION -->
+
+        <div class="admin-panel" id="products">
+
+            <div class="admin-card-heading">
+
+                <div>
+                    <h3>Product Management</h3>
+                    <p>Manage your mobile phones and accessories.</p>
+                </div>
+
+                <button class="admin-primary-button" id="addProductButton" type="button">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Product
+                </button>
+
+            </div>
+
+
+            <div class="admin-empty-state">
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>Product Management</h3>
+
+                <p>
+                    Your product management system will appear here
+                    when connected to your database.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CUSTOMERS SECTION -->
+
+        <div class="admin-panel" id="customers">
+
+            <div class="admin-card-heading">
+
+                <div>
+                    <h3>Customer Management</h3>
+                    <p>View and manage registered customers.</p>
+                </div>
+
+            </div>
+
+
+            <div class="admin-empty-state">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>Customer Records</h3>
+
+                <p>
+                    Customer records will appear here after connecting
+                    Firebase Authentication and Firestore.
+                </p>
+
+            </div>
+
+        </div>
+
+<!-- ======================================
+     MEDIA LIBRARY
+======================================= -->
+
+<section class="admin-panel" id="mediaLibrary">
+
+    <div class="admin-card-heading">
+
+        <div>
+            <h3>Media Library</h3>
+            <p>Upload and manage your product images and videos.</p>
+        </div>
+
+    </div>
+
+    <!-- UPLOAD AREA -->
+
+    <div class="media-upload-container">
+
+        <div class="media-upload-heading">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h3>Upload Images & Videos</h3>
+            <p>Select images or videos from your computer.</p>
+        </div>
+
+        <label for="mediaFiles" class="media-drop-zone">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            <h4>Choose Images or Videos</h4>
+
+            <p>Click here to browse your computer.</p>
+
+            <span>Images: JPG, PNG, WEBP | Videos: MP4, WEBM, MOV</span>
+
+        </label>
+
+        <input
+            type="file"
+            id="mediaFiles"
+            accept="image/jpeg,image/png,image/webp,video/mp4,video/webm,video/quicktime"
+            multiple
+            hidden
+        >
+
+        <!-- SELECTED FILES -->
+
+        <div id="mediaPreview" class="media-preview-grid"></div>
+
+        <!-- UPLOAD BUTTON -->
+
+        <button
+            type="button"
+            id="uploadMediaButton"
+            class="admin-primary-button media-upload-button"
+            disabled
+        >
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            Upload Media
+        </button>
+
+        <!-- UPLOAD STATUS -->
+
+        <div id="mediaUploadStatus" class="media-upload-status"
+             role="status" aria-live="polite"></div>
+
+    </div>
+
+
+    <!-- UPLOADED MEDIA -->
+
+    <div class="uploaded-media-section">
+
+        <div class="admin-card-heading">
+
+            <div>
+                <h3>Uploaded Media</h3>
+                <p>Your uploaded images and videos.</p>
+            </div>
+
+            <span id="mediaCount">0 Files</span>
+
+        </div>
+
+        <div id="uploadedMediaGrid" class="uploaded-media-grid">
+
+            <div class="media-empty-state">
+                <i class="fa-solid fa-photo-film"></i>
+                <p>No media uploaded yet.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- INVENTORY SECTION -->
+
+        <div class="admin-panel" id="inventory">
+
+            <div class="admin-card-heading">
+                <div>
+                    <h3>Inventory Management</h3>
+                    <p>Monitor available products and stock levels.</p>
+                </div>
+            </div>
+
+            <div class="admin-empty-state">
+
+                <i class="fa-solid fa-warehouse"></i>
+
+                <h3>Inventory Overview</h3>
+
+                <p>Inventory tracking will be available after database integration.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PAYMENTS SECTION -->
+
+        <div class="admin-panel" id="payments">
+
+            <div class="admin-card-heading">
+                <div>
+                    <h3>Payment Management</h3>
+                    <p>Monitor customer payments and transactions.</p>
+                </div>
+            </div>
+
+            <div class="admin-empty-state">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <h3>Payment Records</h3>
+
+                <p>Payment records will appear here after payment integration.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REPORTS SECTION -->
+
+        <div class="admin-panel" id="reports">
+
+            <div class="admin-card-heading">
+                <div>
+                    <h3>Business Reports</h3>
+                    <p>Review your store's performance.</p>
+                </div>
+            </div>
+
+            <div class="admin-empty-state">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>Sales Reports</h3>
+
+                <p>Sales reports will be available after connecting your database.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SETTINGS SECTION -->
+
+        <div class="admin-panel" id="settings">
+
+            <div class="admin-card-heading">
+                <div>
+                    <h3>Store Settings</h3>
+                    <p>Manage your store information and preferences.</p>
+                </div>
+            </div>
+
+            <div class="admin-empty-state">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <h3>Store Configuration</h3>
+
+                <p>Store settings will be configured in a future update.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ADMIN FOOTER -->
+
+        <footer class="admin-footer">
+
+            <p>
+                &copy; <span id="currentYear"></span>
+                KAS MOBILE STORE. All rights reserved.
+            </p>
+
+            <span>Admin Management System</span>
+
+        </footer>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- ADMIN JAVASCRIPT -->
+
+<script src="app.js"></script>
+<script src="admin.js"></script>
+<script src="product-management.js"></script>
+<script src="products.js"></script>
+</body>
+</html>

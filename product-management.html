@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Manage products, prices, stock and inventory at KAS MOBILE STORE.">
+
+    <title>Product Management | KAS MOBILE STORE</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product-management.css">
+
+</head>
+
+<body class="product-management-page">
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="pm-sidebar" id="pmSidebar">
+
+        <div class="pm-brand">
+
+            <div class="pm-brand-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+
+            <div>
+                <h2>KAS <span>STORE</span></h2>
+                <small>ADMINISTRATION</small>
+            </div>
+
+        </div>
+
+
+        <div class="pm-admin-profile">
+
+            <div class="pm-admin-avatar">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div>
+                <h4>Administrator</h4>
+                <span>Store Manager</span>
+            </div>
+
+        </div>
+
+
+        <nav class="pm-navigation">
+
+            <p class="pm-nav-title">MAIN MENU</p>
+
+            <a href="admin-dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="product-management.html" class="active">
+                <i class="fa-solid fa-box"></i>
+                <span>Products</span>
+            </a>
+
+            <a href="admin-dashboard.html#orders">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Orders</span>
+            </a>
+
+            <a href="admin-dashboard.html#customers">
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+            </a>
+
+            <a href="admin-dashboard.html#inventory">
+                <i class="fa-solid fa-warehouse"></i>
+                <span>Inventory</span>
+            </a>
+
+            <p class="pm-nav-title">MANAGEMENT</p>
+
+            <a href="admin-dashboard.html#reports">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="admin-dashboard.html#settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="pm-sidebar-bottom">
+
+            <a href="index.html" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+                Visit Store
+            </a>
+
+            <button type="button" id="pmLogout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================= -->
+
+    <main class="pm-main">
+
+        <!-- TOP BAR -->
+
+        <header class="pm-topbar">
+
+            <div class="pm-topbar-left">
+
+                <button class="pm-menu-toggle" id="pmMenuToggle"
+                    aria-label="Open navigation menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div>
+                    <h1>Product Management</h1>
+                    <p>Manage your store products and inventory.</p>
+                </div>
+
+            </div>
+
+
+            <div class="pm-topbar-right">
+
+                <button class="pm-notification-button"
+                    aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </button>
+
+                <div class="pm-profile">
+
+                    <div class="pm-profile-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong>Admin</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="pm-content">
+
+
+            <!-- PAGE INTRODUCTION -->
+
+            <div class="pm-page-heading">
+
+                <div>
+
+                    <span class="pm-breadcrumb">
+                        Dashboard / Products
+                    </span>
+
+                    <h2>Manage Your Products</h2>
+
+                    <p>
+                        Add new products, update prices, manage stock
+                        and organise your product catalogue.
+                    </p>
+
+                </div>
+
+
+                <button class="pm-add-button" id="openAddProduct">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add New Product
+
+                </button>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="pm-statistics">
+
+                <div class="pm-stat-card">
+
+                    <div class="pm-stat-icon blue">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Products</span>
+                        <h3 id="totalProducts">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="pm-stat-card">
+
+                    <div class="pm-stat-icon green">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Active Products</span>
+                        <h3 id="activeProducts">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="pm-stat-card">
+
+                    <div class="pm-stat-icon orange">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div>
+                        <span>Low Stock</span>
+                        <h3 id="lowStockProducts">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="pm-stat-card">
+
+                    <div class="pm-stat-icon red">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+
+                    <div>
+                        <span>Out of Stock</span>
+                        <h3 id="outOfStockProducts">0</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT MANAGEMENT CARD -->
+
+            <div class="pm-products-card">
+
+
+                <!-- TOOLBAR -->
+
+                <div class="pm-products-toolbar">
+
+                    <div>
+
+                        <h3>All Products</h3>
+
+                        <p>
+                            View and manage your product catalogue.
+                        </p>
+
+                    </div>
+
+
+                    <div class="pm-toolbar-actions">
+
+                        <div class="pm-search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="search"
+                                id="productSearch"
+                                placeholder="Search products...">
+
+                        </div>
+
+
+                        <select id="categoryFilter">
+
+                            <option value="all">All Categories</option>
+                            <option value="phones">Phones</option>
+                            <option value="chargers">Chargers</option>
+                            <option value="headphones">Headphones</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="accessories">Accessories</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT TABLE -->
+
+                <div class="pm-table-container">
+
+                    <table class="pm-products-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>PRODUCT</th>
+
+                                <th>CATEGORY</th>
+
+                                <th>PRICE</th>
+
+                                <th>STOCK</th>
+
+                                <th>STATUS</th>
+
+                                <th>ACTIONS</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="productTableBody">
+
+                            <tr>
+
+                                <td colspan="6" class="pm-loading">
+
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                    Loading products...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+
+                <div class="pm-empty-state" id="emptyProducts"
+                    style="display:none;">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <h3>No Products Found</h3>
+
+                    <p>
+                        Start building your catalogue by adding your first product.
+                    </p>
+
+                    <button type="button" id="emptyAddProduct">
+                        Add Your First Product
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="pm-footer">
+
+            <p>
+                &copy; <span id="pmYear"></span>
+                KAS MOBILE STORE. All rights reserved.
+            </p>
+
+            <span>Admin Product Management</span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- ADD / EDIT PRODUCT MODAL -->
+    <!-- ================================= -->
+
+    <div class="pm-modal-overlay" id="productModal">
+
+        <div class="pm-modal">
+
+            <div class="pm-modal-header">
+
+                <div>
+
+                    <h2 id="modalTitle">Add New Product</h2>
+
+                    <p>Enter your product information below.</p>
+
+                </div>
+
+                <button type="button" id="closeProductModal"
+                    aria-label="Close product form">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT FORM -->
+
+            <form id="productForm">
+
+                <input type="hidden" id="productId">
+
+
+                <!-- PRODUCT NAME -->
+
+                <div class="pm-form-group">
+
+                    <label for="productName">Product Name *</label>
+
+                    <input type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                        required>
+
+                </div>
+
+
+                <!-- CATEGORY AND PRICE -->
+
+                <div class="pm-form-row">
+
+                    <div class="pm-form-group">
+
+                        <label for="productCategory">Category *</label>
+
+                        <select id="productCategory" required>
+
+                            <option value="">Select Category</option>
+
+                            <option value="phones">Phones</option>
+
+                            <option value="chargers">Chargers</option>
+
+                            <option value="headphones">Headphones</option>
+
+                            <option value="electronics">Electronics</option>
+
+                            <option value="accessories">Accessories</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="pm-form-group">
+
+                        <label for="productPrice">Price (K) *</label>
+
+                        <input type="number"
+                            id="productPrice"
+                            min="0"
+                            step="0.01"
+                            placeholder="e.g. 1500"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STOCK AND STATUS -->
+
+                <div class="pm-form-row">
+
+                    <div class="pm-form-group">
+
+                        <label for="productStock">Stock Quantity *</label>
+
+                        <input type="number"
+                            id="productStock"
+                            min="0"
+                            step="1"
+                            placeholder="Enter quantity"
+                            required>
+
+                    </div>
+
+
+                    <div class="pm-form-group">
+
+                        <label for="productStatus">Product Status</label>
+
+                        <select id="productStatus">
+
+                            <option value="active">Active</option>
+
+                            <option value="inactive">Inactive</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT IMAGE -->
+
+                <div class="pm-form-group">
+
+                    <label for="productImage">Product Image *</label>
+
+                    <input type="file"
+                        id="productImage"
+                        accept="image/jpeg,image/png,image/webp">
+
+                    <small>Accepted formats: JPG, PNG and WEBP.</small>
+
+                    <div class="pm-image-preview" id="imagePreview">
+
+                        <i class="fa-solid fa-image"></i>
+
+                        <span>Image preview will appear here</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="pm-form-group">
+
+                    <label for="productDescription">Product Description *</label>
+
+                    <textarea id="productDescription"
+                        rows="5"
+                        placeholder="Describe your product..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div id="productFormMessage"
+                    class="pm-form-message"
+                    role="status"></div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="pm-form-buttons">
+
+                    <button type="button"
+                        class="pm-cancel-button"
+                        id="cancelProduct">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button type="submit"
+                        class="pm-save-button"
+                        id="saveProductButton">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Product
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script type="module" src="product-management.js"></script>
+
+</body>
+
+</html>

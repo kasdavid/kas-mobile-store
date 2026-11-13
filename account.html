@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account | KAS MOBILE STORE</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="account.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="account-container">
+
+        <div class="account-card">
+
+            <div class="account-logo">
+                <h1>KAS <span>MOBILE</span></h1>
+                <p>STORE</p>
+            </div>
+
+            <div class="account-heading">
+                <h2>Welcome Back!</h2>
+                <p>Sign in to your account to continue</p>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required>
+
+                        <button
+                            type="button"
+                            id="togglePassword">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#" id="forgotPassword">
+                        Forgot Password?
+                    </a>
+                </div>
+
+                <button type="submit" id="loginButton">
+                    Sign In
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div id="loginStatus"></div>
+<!-- GOOGLE SIGN IN -->
+<div class="google-divider">
+    <span>OR</span>
+</div>
+
+<button type="button" id="googleLoginButton" class="google-login-button">
+
+    <img
+        src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+        alt="Google">
+
+    <span>Continue with Google</span>
+
+</button>
+            </form>
+
+            <div class="account-register-link">
+                <p>
+                    Don't have an account?
+                    <a href="register.html">Create Account</a>
+                </p>
+            </div>
+
+            <div class="back-to-store">
+                <a href="index.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Store
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="account.js"></script>
+
+</body>
+</html>

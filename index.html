@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="KAS MOBILE STORE - Shop smartphones, chargers, headphones, accessories and electronics.">
+    <meta name="theme-color" content="#071b35">
+
+    <title>KAS MOBILE STORE | Premium Technology</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="product-modal.css">
+</head>
+
+<body>
+
+    <!-- ANIMATED BACKGROUND -->
+    <div class="animated-word-background" aria-hidden="true">
+        <div class="word-track track-one">
+            <div class="word-group">
+                <span>KAS MOBILE STORE</span>
+                <span>SMART TECHNOLOGY</span>
+                <span>PREMIUM QUALITY</span>
+            </div>
+            <div class="word-group" aria-hidden="true">
+                <span>KAS MOBILE STORE</span>
+                <span>SMART TECHNOLOGY</span>
+                <span>PREMIUM QUALITY</span>
+            </div>
+        </div>
+
+        <div class="word-track track-two">
+            <div class="word-group">
+                <span>INNOVATION</span>
+                <span>ACCESSORIES</span>
+                <span>YOUR TECH PARTNER</span>
+            </div>
+            <div class="word-group" aria-hidden="true">
+                <span>INNOVATION</span>
+                <span>ACCESSORIES</span>
+                <span>YOUR TECH PARTNER</span>
+            </div>
+        </div>
+
+        <div class="word-track track-three">
+            <div class="word-group">
+                <span>SMARTPHONES</span>
+                <span>WIRELESS AUDIO</span>
+                <span>FAST CHARGING</span>
+            </div>
+            <div class="word-group" aria-hidden="true">
+                <span>SMARTPHONES</span>
+                <span>WIRELESS AUDIO</span>
+                <span>FAST CHARGING</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <p>
+            <i class="fa-solid fa-bolt"></i>
+            Welcome to KAS MOBILE STORE — Your Technology Shopping Partner
+        </p>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </span>
+
+                <span>
+                    KAS <strong>MOBILE</strong>
+                    <small>STORE</small>
+                </span>
+            </a>
+
+            <!-- SEARCH -->
+            <form class="search-box" id="searchForm">
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="Search phones, accessories..."
+                    aria-label="Search products"
+                >
+
+                <button type="submit" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <!-- HEADER ACTIONS -->
+            <div class="header-actions">
+
+                <a href="account.html" class="header-action">
+                    <i class="fa-regular fa-user"></i>
+                    <span>My Account</span>
+                </a>
+
+                <a href="wishlist.html" class="header-action">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+
+                <a href="cart.html" class="header-action cart-action">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+
+            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNavigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="main-navigation" id="mainNavigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+
+                <li><a href="shop.html?category=phones" class="nav-link">Mobile Phones</a></li>
+
+                <li><a href="shop.html?category=accessories" class="nav-link">Accessories</a></li>
+
+                <li><a href="shop.html?category=audio" class="nav-link">Audio</a></li>
+
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        <i class="fa-solid fa-star"></i>
+                        TECHNOLOGY MADE SIMPLE
+                    </span>
+
+                    <h1>
+                        Discover Your
+                        <span>Perfect Technology.</span>
+                    </h1>
+
+                    <p>
+                        Explore smartphones, accessories, headphones,
+                        chargers and modern electronics at KAS MOBILE STORE.
+                        Upgrade your everyday experience with technology
+                        that keeps you connected.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="shop.html" class="primary-btn">
+                            Explore Products
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="contact.html" class="secondary-btn">
+                            Contact Us
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div>
+                            <i class="fa-solid fa-check-circle"></i>
+                            Quality Products
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-headset"></i>
+                            Customer Support
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-image">
+
+                    <div class="hero-glow"></div>
+
+                    <img
+                        src="images/background.jpg.jpeg"
+                        alt="Modern smartphone"
+                    >
+
+                    <div class="floating-card">
+                        <i class="fa-solid fa-mobile-screen"></i>
+
+                        <div>
+                            <strong>Smart Technology</strong>
+                            <small>Discover what's new</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICE FEATURES -->
+        <section class="service-section">
+
+            <div class="service-container">
+
+                <div class="service-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <div>
+                        <h3>Modern Technology</h3>
+                        <p>Explore new devices</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <h3>Quality Focus</h3>
+                        <p>Shop with confidence</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <h3>Easy Enquiries</h3>
+                        <p>Contact us directly</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="categories-section" id="categories">
+
+            <div class="section-heading">
+
+                <span class="section-label">EXPLORE OUR STORE</span>
+
+                <h2>Shop By <span>Category</span></h2>
+
+                <p>Find the technology and accessories you need.</p>
+
+            </div>
+
+            <div class="category-grid">
+
+                <a href="shop.html?category=phones" class="category-card">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3>Smartphones</h3>
+                    <span>Explore phones <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="shop.html?category=protection" class="category-card">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Phone Protection</h3>
+                    <span>Explore products <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="shop.html?category=chargers" class="category-card">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-charging-station"></i>
+                    </div>
+                    <h3>Chargers</h3>
+                    <span>Explore products <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="shop.html?category=audio" class="category-card">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <h3>Audio</h3>
+                    <span>Explore products <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="shop.html?category=powerbanks" class="category-card">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-battery-full"></i>
+                    </div>
+                    <h3>Power Banks</h3>
+                    <span>Explore products <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="shop.html?category=parts" class="category-card">
+                    <div class="category-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3>Phone Parts</h3>
+                    <span>Explore products <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="featured-products" id="featuredProducts">
+
+            <div class="section-heading">
+
+                <span class="section-label">OUR COLLECTION</span>
+
+                <h2>Featured <span>Products</span></h2>
+
+                <p>Discover some of our popular technology products.</p>
+
+            </div>
+
+            <div class="product-grid">
+
+                <!-- PRODUCT 1 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <span class="product-badge">Popular</span>
+
+                        <button class="product-favourite" aria-label="Add smartphone to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600"
+                             alt="Premium smartphone" loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Smartphones</span>
+                        <h3>Premium Smartphone</h3>
+
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>Featured</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>Contact for price</strong>
+                            <a href="contact.html" aria-label="Enquire about smartphone">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 2 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <span class="product-badge new-badge">New</span>
+
+                        <button class="product-favourite" aria-label="Add Android phone to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+                             alt="Modern Android phone" loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Mobile Phones</span>
+                        <h3>Modern Android Phone</h3>
+
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>Featured</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>Contact for price</strong>
+                            <a href="contact.html" aria-label="Enquire about Android phone">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 3 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <span class="product-badge">Popular</span>
+
+                        <button class="product-favourite" aria-label="Add headphones to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <img src="images/headphones.jpg.jpeg"
+                             alt="Wireless headphones" loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Audio</span>
+                        <h3>Wireless Headphones</h3>
+
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>Featured</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>Contact for price</strong>
+                            <a href="contact.html" aria-label="Enquire about headphones">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 4 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <button class="product-favourite" aria-label="Add accessories to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <img src="images/card.jpg.jpeg"
+                             alt="Mobile accessories" loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Accessories</span>
+                        <h3>Mobile Accessories</h3>
+
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>Featured</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>Contact for price</strong>
+                            <a href="contact.html" aria-label="Enquire about accessories">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 5 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <span class="product-badge new-badge">New</span>
+
+                        <button class="product-favourite" aria-label="Add power bank to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600"
+                             alt="Portable power bank" loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Charging</span>
+                        <h3>Portable Power Bank</h3>
+
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>Featured</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>Contact for price</strong>
+                            <a href="contact.html" aria-label="Enquire about power bank">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 6 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <button class="product-favourite" aria-label="Add earbuds to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=600"
+                             alt="Wireless earbuds" loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">Audio</span>
+                        <h3>Wireless Earbuds</h3>
+
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>Featured</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>Contact for price</strong>
+                            <a href="contact.html" aria-label="Enquire about earbuds">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="view-all-container">
+                <a href="shop.html" class="primary-btn">
+                    View All Products
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- CALL TO ACTION -->
+        <section class="contact-banner">
+
+            <div class="contact-banner-content">
+
+                <span>NEED HELP CHOOSING?</span>
+
+                <h2>Let's Find Your Next Device.</h2>
+
+                <p>
+                    Contact KAS MOBILE STORE for product enquiries
+                    and assistance.
+                </p>
+
+                <a href="contact.html" class="primary-btn">
+                    Contact Our Store
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo footer-logo">
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </span>
+
+                    <span>
+                        KAS <strong>MOBILE</strong>
+                        <small>STORE</small>
+                    </span>
+                </a>
+
+                <p>
+                    Your technology shopping partner.
+                    Discover smartphones, accessories and electronics.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Shopping Cart</a>
+            </div>
+
+
+            <div class="footer-column">
+                <h3>Customer Support</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">My Account</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+
+            <div class="footer-column">
+                <h3>Our Store</h3>
+                <p>Mobile Phones</p>
+                <p>Phone Accessories</p>
+                <p>Chargers & Batteries</p>
+                <p>Audio Equipment</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="currentYear"></span>
+                KAS MOBILE STORE. All Rights Reserved.
+            </p>
+        </div>
+
+    </footer>
+
+    <!-- =====================================
+     PRODUCT DETAILS POPUP
+===================================== -->
+
+<div class="product-modal" id="productModal" aria-hidden="true">
+
+```
+<div class="product-modal-overlay" id="productModalOverlay"></div>
+
+<div class="product-modal-content"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modalProductName">
+
+    <button type="button" class="product-modal-close"
+            id="closeProductModal"
+            aria-label="Close product details">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <div class="product-modal-grid">
+
+        <!-- PRODUCT IMAGE -->
+        <div class="modal-product-image">
+            <img id="modalProductImage"
+                 src=""
+                 alt="Product image">
+
+            <span class="modal-stock-badge" id="modalProductStock">
+                Available
+            </span>
+        </div>
+
+        <!-- PRODUCT DETAILS -->
+        <div class="modal-product-details">
+
+            <span class="modal-product-category"
+                  id="modalProductCategory">
+                MOBILE PHONE
+            </span>
+
+            <h2 id="modalProductName">Product Name</h2>
+
+            <p class="modal-product-brand" id="modalProductBrand">
+                Brand: Samsung
+            </p>
+
+            <div class="modal-price">
+                <span>Price</span>
+                <strong id="modalProductPrice">
+                    Contact for Price
+                </strong>
+            </div>
+
+            <p class="modal-product-description"
+               id="modalProductDescription">
+                Product description will appear here.
+            </p>
+
+            <div class="modal-specifications">
+                <h3>Product Specifications</h3>
+
+                <div id="modalProductSpecifications">
+                    <!-- Specifications added by JavaScript -->
+                </div>
+            </div>
+
+            <div class="modal-product-actions">
+
+                <a href="#" id="modalWhatsAppButton"
+                   class="modal-whatsapp-button"
+                   target="_blank"
+                   rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    Enquire on WhatsApp
+                </a>
+
+                <a href="contact.html"
+                   class="modal-contact-button">
+                    <i class="fas fa-phone"></i>
+                    Contact Store
+                </a>
+
+            </div>
+
+            <p class="modal-note">
+                <i class="fas fa-shield-halved"></i>
+                Contact our team to confirm price and availability.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+    
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+<script src="shop.js"></script>
+<script src="mobile-phones.js"></script>
+<script src="product-modal.js"></script>
+<script src="wishlist.js"></script>
+</body>
+</html>
+
+
+

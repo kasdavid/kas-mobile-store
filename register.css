@@ -1,0 +1,463 @@
+/* =========================================
+   KAS MOBILE STORE
+   CUSTOMER REGISTRATION DESIGN
+========================================= */
+
+:root {
+    --register-bg: #061426;
+    --register-card: #0c2340;
+    --register-blue: #00a8ff;
+    --register-light: #65caff;
+    --register-white: #ffffff;
+    --register-muted: #9aadc3;
+    --register-border: rgba(255, 255, 255, 0.1);
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--register-bg);
+    color: var(--register-white);
+    min-height: 100vh;
+}
+
+/* BACKGROUND */
+
+.register-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 168, 255, 0.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(0, 85, 180, 0.15),
+            transparent 35%
+        ),
+        #061426;
+}
+
+/* REGISTRATION CARD */
+
+.register-card {
+    width: 100%;
+    max-width: 480px;
+
+    padding: 40px 35px;
+
+    background: rgba(12, 35, 64, 0.96);
+
+    border: 1px solid var(--register-border);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(0, 168, 255, 0.08);
+
+    animation: registerAppear 0.7s ease;
+}
+
+/* LOGO */
+
+.register-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.register-logo h1 {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.register-logo h1 span {
+    color: var(--register-blue);
+}
+
+.register-logo p {
+    color: var(--register-light);
+    font-size: 11px;
+    letter-spacing: 7px;
+    margin-top: 5px;
+}
+
+/* HEADING */
+
+.register-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.register-heading h2 {
+    font-size: 26px;
+    margin-bottom: 9px;
+}
+
+.register-heading p {
+    color: var(--register-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FORM GROUP */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+/* INPUT BOX */
+
+.input-box {
+    display: flex;
+    align-items: center;
+
+    height: 54px;
+    padding: 0 15px;
+
+    background: #071a30;
+
+    border: 1px solid var(--register-border);
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+.input-box:focus-within {
+    border-color: var(--register-blue);
+
+    box-shadow:
+        0 0 12px rgba(0, 168, 255, 0.15);
+}
+
+.input-box > i {
+    color: var(--register-blue);
+
+    font-size: 16px;
+
+    margin-right: 12px;
+}
+
+/* INPUT FIELD */
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.input-box input::placeholder {
+    color: #71869f;
+}
+
+/* PASSWORD TOGGLE */
+
+.password-toggle {
+    background: transparent;
+
+    border: none;
+
+    color: var(--register-muted);
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.password-toggle:hover {
+    color: var(--register-blue);
+}
+
+/* TERMS AND CONDITIONS */
+
+.terms-container {
+    margin: 25px 0;
+}
+
+.terms-label {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: var(--register-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    cursor: pointer;
+}
+
+.terms-label input {
+    width: 16px;
+    height: 16px;
+
+    margin-top: 3px;
+
+    accent-color: var(--register-blue);
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+.terms-label a {
+    color: var(--register-blue);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.terms-label a:hover {
+    color: white;
+}
+
+/* CREATE ACCOUNT BUTTON */
+
+#registerButton {
+    width: 100%;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #008cff,
+        #00c2ff
+    );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#registerButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 168, 255, 0.3);
+}
+
+#registerButton:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+/* =========================================
+   GOOGLE AUTHENTICATION BUTTON
+========================================= */
+
+.google-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 22px 0;
+    color: #8b98aa;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.google-divider::before,
+.google-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(150, 170, 195, 0.25);
+}
+
+.google-login-button {
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    background: #ffffff;
+    color: #172033;
+
+    border: 1px solid #d9e0e9;
+    border-radius: 10px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.google-login-button img {
+    width: 21px;
+    height: 21px;
+}
+
+.google-login-button:hover {
+    background: #f0f5fa;
+    border-color: #00a8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 168, 255, 0.12);
+}
+
+.google-login-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* REGISTRATION STATUS */
+
+#registerStatus {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+#registerStatus.error {
+    color: #ff6464;
+}
+
+#registerStatus.success {
+    color: #39d98a;
+}
+
+/* SIGN IN LINK */
+
+.register-login-link {
+    text-align: center;
+
+    margin-top: 30px;
+
+    font-size: 14px;
+
+    color: var(--register-muted);
+}
+
+.register-login-link a {
+    color: var(--register-blue);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.register-login-link a:hover {
+    color: white;
+}
+
+/* BACK TO STORE */
+
+.back-to-store {
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+.back-to-store a {
+    color: var(--register-muted);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.back-to-store a:hover {
+    color: var(--register-blue);
+}
+
+/* ANIMATION */
+
+@keyframes registerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 480px) {
+
+    .register-container {
+        padding: 20px 15px;
+    }
+
+    .register-card {
+        padding: 30px 22px;
+    }
+
+    .register-logo h1 {
+        font-size: 26px;
+    }
+
+    .register-heading h2 {
+        font-size: 23px;
+    }
+
+}

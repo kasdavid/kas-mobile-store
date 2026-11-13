@@ -1,0 +1,1144 @@
+/* =========================================
+KAS MOBILE STORE
+ACCESSORIES PAGE CSS
+========================================= */
+
+/* =========================================
+
+1. ACCESSORIES HERO
+   ========================================= */
+
+.accessories-hero {
+position: relative;
+min-height: 440px;
+padding: 100px 7%;
+
+display: flex;
+align-items: center;
+
+overflow: hidden;
+
+background:
+    radial-gradient(
+        circle at 85% 20%,
+        rgba(0, 168, 255, 0.22),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 10% 90%,
+        rgba(56, 198, 255, 0.10),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #061426,
+        #0B1F38,
+        #102B49
+    );
+
+border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.accessories-hero::before {
+content: "";
+position: absolute;
+
+width: 350px;
+height: 350px;
+
+right: -100px;
+top: 30px;
+
+border: 1px solid rgba(56,198,255,0.12);
+border-radius: 50%;
+
+box-shadow:
+    0 0 0 35px rgba(56,198,255,0.025),
+    0 0 0 70px rgba(56,198,255,0.02);
+
+pointer-events: none;
+}
+
+.accessories-hero-content {
+width: 100%;
+max-width: 1250px;
+margin: auto;
+
+position: relative;
+z-index: 2;
+}
+
+.accessories-label {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+
+padding: 11px 18px;
+
+color: #38C6FF;
+background: rgba(0,168,255,0.12);
+
+border: 1px solid rgba(0,168,255,0.25);
+border-radius: 50px;
+
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 1.5px;
+
+margin-bottom: 25px;
+}
+
+.accessories-label i {
+font-size: 15px;
+}
+
+.accessories-hero h1 {
+max-width: 850px;
+
+color: #F1F7FF;
+
+font-size: clamp(38px, 5.5vw, 68px);
+font-weight: 900;
+line-height: 1.12;
+
+margin-bottom: 20px;
+}
+
+.accessories-hero h1 span {
+display: block;
+color: #38C6FF;
+}
+
+.accessories-hero p {
+max-width: 650px;
+
+color: #A9BDD3;
+
+font-size: 15px;
+line-height: 1.9;
+
+margin-bottom: 30px;
+}
+
+/* =========================================
+2. HERO BUTTONS
+========================================= */
+
+.accessories-hero-buttons {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 15px;
+
+margin-bottom: 35px;
+}
+
+.accessories-hero-buttons .btn {
+min-height: 48px;
+
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 12px;
+
+padding: 14px 23px;
+
+border-radius: 9px;
+
+text-decoration: none;
+font-size: 12px;
+font-weight: 800;
+
+transition: all 0.3s ease;
+}
+
+.accessories-hero-buttons .btn-primary {
+color: #FFFFFF;
+
+background: linear-gradient(
+    135deg,
+    #008DDB,
+    #00A8FF
+);
+
+border: 1px solid transparent;
+}
+
+.accessories-hero-buttons .btn-primary:hover {
+transform: translateY(-4px);
+
+box-shadow:
+    0 10px 30px rgba(0,168,255,0.25);
+}
+
+.accessories-hero-buttons .btn-secondary {
+color: #F1F7FF;
+background: rgba(255,255,255,0.05);
+
+border: 1px solid rgba(255,255,255,0.15);
+}
+
+.accessories-hero-buttons .btn-secondary:hover {
+color: #38C6FF;
+border-color: #38C6FF;
+}
+
+/* =========================================
+3. BREADCRUMB
+========================================= */
+
+.accessories-breadcrumb {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 12px;
+
+color: #A9BDD3;
+font-size: 12px;
+}
+
+.accessories-breadcrumb a {
+color: #38C6FF;
+text-decoration: none;
+
+transition: 0.3s;
+}
+
+.accessories-breadcrumb a:hover {
+color: #FFFFFF;
+}
+
+.accessories-breadcrumb i {
+font-size: 9px;
+color: #6D849D;
+}
+
+/* =========================================
+4. ACCESSORY CATEGORIES
+========================================= */
+
+.accessory-categories {
+padding: 85px 7%;
+
+position: relative;
+}
+
+.accessory-categories .section-heading {
+max-width: 750px;
+margin: 0 auto 50px;
+
+text-align: center;
+}
+
+.accessory-categories .section-subtitle,
+.accessory-products-section .section-subtitle {
+display: inline-block;
+
+color: #38C6FF;
+
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 2px;
+
+margin-bottom: 15px;
+}
+
+.accessory-categories .section-heading h2,
+.accessory-products-section .section-heading h2 {
+color: #F1F7FF;
+
+font-size: clamp(29px, 4vw, 45px);
+font-weight: 900;
+
+margin-bottom: 15px;
+}
+
+.accessory-categories .section-heading h2 span,
+.accessory-products-section .section-heading h2 span {
+color: #38C6FF;
+}
+
+.accessory-categories .section-heading p,
+.accessory-products-section .section-heading p {
+color: #A9BDD3;
+
+font-size: 14px;
+line-height: 1.8;
+}
+
+/* =========================================
+5. CATEGORY GRID
+========================================= */
+
+.accessory-category-grid {
+max-width: 1400px;
+margin: auto;
+
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 22px;
+}
+
+.accessory-category-card {
+min-height: 190px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+padding: 25px 20px;
+
+text-align: center;
+text-decoration: none;
+
+background: linear-gradient(
+    145deg,
+    #102B49,
+    #0B1F38
+);
+
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 18px;
+
+transition: all 0.35s ease;
+}
+
+.accessory-category-card:hover {
+transform: translateY(-8px);
+
+border-color: rgba(0,168,255,0.5);
+
+box-shadow:
+    0 15px 40px rgba(0,0,0,0.25),
+    0 0 25px rgba(0,168,255,0.10);
+}
+
+/* CATEGORY ICON */
+
+.category-icon {
+width: 65px;
+height: 65px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+margin-bottom: 18px;
+
+color: #38C6FF;
+
+background: rgba(0,168,255,0.12);
+
+border: 1px solid rgba(0,168,255,0.18);
+border-radius: 18px;
+
+font-size: 25px;
+
+transition: all 0.35s ease;
+}
+
+.accessory-category-card:hover .category-icon {
+color: #FFFFFF;
+background: #00A8FF;
+
+transform: rotate(-5deg) scale(1.08);
+}
+
+.accessory-category-card h3 {
+color: #F1F7FF;
+
+font-size: 16px;
+font-weight: 800;
+
+margin-bottom: 9px;
+}
+
+.accessory-category-card span {
+color: #38C6FF;
+
+font-size: 11px;
+font-weight: 700;
+}
+
+/* =========================================
+6. ACCESSORY PRODUCTS SECTION
+========================================= */
+
+.accessory-products-section {
+padding: 85px 7%;
+
+position: relative;
+
+background: rgba(6,20,38,0.25);
+}
+
+.accessory-products-section .section-heading {
+max-width: 750px;
+margin: 0 auto 50px;
+
+text-align: center;
+}
+
+/* =========================================
+7. PRODUCTS LAYOUT
+========================================= */
+
+.accessory-layout {
+max-width: 1400px;
+margin: auto;
+
+display: grid;
+grid-template-columns: 270px minmax(0, 1fr);
+gap: 30px;
+
+align-items: start;
+}
+
+/* =========================================
+8. FILTER SIDEBAR
+========================================= */
+
+.accessory-sidebar {
+position: sticky;
+top: 110px;
+
+padding: 25px;
+
+background: linear-gradient(
+    145deg,
+    #102B49,
+    #0B1F38
+);
+
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 18px;
+
+box-shadow: 0 15px 40px rgba(0,0,0,0.20);
+}
+
+.accessory-filter-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px;
+
+padding-bottom: 20px;
+
+border-bottom: 1px solid rgba(255,255,255,0.09);
+}
+
+.accessory-filter-header h3 {
+color: #F1F7FF;
+
+font-size: 17px;
+font-weight: 800;
+}
+
+.accessory-filter-header h3 i {
+color: #38C6FF;
+margin-right: 7px;
+}
+
+.accessory-filter-header button {
+color: #38C6FF;
+
+background: transparent;
+border: none;
+
+font-size: 11px;
+font-weight: 800;
+
+cursor: pointer;
+transition: 0.3s;
+}
+
+.accessory-filter-header button:hover {
+color: #FFFFFF;
+}
+
+.accessory-filter-group {
+padding: 22px 0;
+
+border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.accessory-filter-group:last-child {
+border-bottom: none;
+}
+
+.accessory-filter-group h4 {
+color: #F1F7FF;
+
+font-size: 13px;
+font-weight: 800;
+
+margin-bottom: 17px;
+}
+
+.accessory-filter-group label {
+display: flex;
+align-items: center;
+gap: 10px;
+
+color: #A9BDD3;
+
+font-size: 12px;
+
+margin-bottom: 14px;
+
+cursor: pointer;
+transition: 0.3s;
+}
+
+.accessory-filter-group label:hover {
+color: #38C6FF;
+}
+
+.accessory-filter-group input[type="radio"],
+.accessory-filter-group input[type="checkbox"] {
+width: 16px;
+height: 16px;
+
+accent-color: #00A8FF;
+
+cursor: pointer;
+}
+
+.accessory-filter-group input[type="number"] {
+width: 100%;
+
+padding: 13px 14px;
+
+color: #F1F7FF;
+background: #061426;
+
+border: 1px solid rgba(255,255,255,0.12);
+border-radius: 9px;
+
+outline: none;
+
+font-size: 12px;
+
+transition: 0.3s;
+}
+
+.accessory-filter-group input[type="number"]:focus {
+border-color: #00A8FF;
+
+box-shadow:
+    0 0 0 3px rgba(0,168,255,0.12);
+}
+
+/* =========================================
+9. PRODUCT TOOLBAR
+========================================= */
+
+.accessory-toolbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+
+padding: 15px 20px;
+margin-bottom: 25px;
+
+background: rgba(16,43,73,0.75);
+
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 12px;
+}
+
+.accessory-toolbar p {
+color: #A9BDD3;
+
+font-size: 12px;
+font-weight: 700;
+}
+
+.accessory-toolbar select {
+max-width: 100%;
+
+padding: 11px 14px;
+
+color: #F1F7FF;
+background: #061426;
+
+border: 1px solid rgba(255,255,255,0.12);
+border-radius: 8px;
+
+outline: none;
+
+font-size: 12px;
+cursor: pointer;
+}
+
+.accessory-toolbar select option {
+color: #FFFFFF;
+background: #061426;
+}
+
+/* =========================================
+10. PRODUCT GRID
+========================================= */
+
+.accessory-product-grid {
+display: grid;
+
+grid-template-columns: repeat(3, minmax(0, 1fr));
+
+gap: 22px;
+}
+
+/* =========================================
+11. PRODUCT CARDS
+========================================= */
+
+.accessory-product-grid .product-card {
+position: relative;
+overflow: hidden;
+
+background: linear-gradient(
+    145deg,
+    #102B49,
+    #0B1F38
+);
+
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 17px;
+
+transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.accessory-product-grid .product-card:hover {
+transform: translateY(-8px);
+
+border-color: rgba(0,168,255,0.45);
+
+box-shadow:
+    0 18px 40px rgba(0,0,0,0.30),
+    0 0 25px rgba(0,168,255,0.10);
+}
+
+/* =========================================
+12. PRODUCT IMAGES
+========================================= */
+
+.accessory-product-grid .product-image-container {
+position: relative;
+
+height: 225px;
+overflow: hidden;
+
+background: #FFFFFF;
+}
+
+.accessory-product-grid .product-image-container img {
+display: block;
+
+width: 100%;
+height: 100%;
+
+object-fit: contain;
+
+padding: 16px;
+
+transition: transform 0.5s ease;
+}
+
+.accessory-product-grid .product-card:hover .product-image-container img {
+transform: scale(1.08);
+}
+
+/* =========================================
+13. PRODUCT BADGES
+========================================= */
+
+.accessory-product-grid .product-badge {
+position: absolute;
+
+top: 14px;
+left: 14px;
+
+z-index: 2;
+
+padding: 7px 12px;
+
+color: #FFFFFF;
+background: #00A8FF;
+
+border-radius: 50px;
+
+font-size: 9px;
+font-weight: 800;
+
+text-transform: uppercase;
+letter-spacing: 0.8px;
+}
+
+/* =========================================
+14. FAVOURITE BUTTON
+========================================= */
+
+.accessory-product-grid .product-favourite {
+position: absolute;
+
+top: 13px;
+right: 13px;
+
+z-index: 3;
+
+width: 37px;
+height: 37px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+color: #FFFFFF;
+background: rgba(6,20,38,0.90);
+
+border: none;
+border-radius: 50%;
+
+font-size: 15px;
+
+cursor: pointer;
+
+transition: all 0.3s ease;
+}
+
+.accessory-product-grid .product-favourite:hover {
+color: #FFFFFF;
+background: #00A8FF;
+
+transform: scale(1.1);
+}
+
+.accessory-product-grid .product-favourite.active {
+color: #EF4444;
+}
+
+/* =========================================
+15. PRODUCT INFORMATION
+========================================= */
+
+.accessory-product-grid .product-info {
+padding: 20px;
+}
+
+.accessory-product-grid .product-category {
+display: inline-block;
+
+color: #38C6FF;
+
+font-size: 10px;
+font-weight: 800;
+
+text-transform: uppercase;
+letter-spacing: 1px;
+
+margin-bottom: 10px;
+}
+
+.accessory-product-grid .product-info h3 {
+color: #F1F7FF;
+
+font-size: 15px;
+font-weight: 800;
+line-height: 1.5;
+
+margin-bottom: 10px;
+}
+
+.accessory-product-grid .product-description {
+min-height: 55px;
+
+color: #A9BDD3;
+
+font-size: 11px;
+line-height: 1.8;
+
+margin-bottom: 16px;
+}
+
+.accessory-product-grid .product-price {
+color: #38C6FF;
+
+font-size: 16px;
+font-weight: 900;
+
+margin-bottom: 17px;
+}
+
+/* =========================================
+16. ENQUIRY BUTTON
+========================================= */
+
+.accessory-product-grid .btn {
+width: 100%;
+min-height: 43px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+padding: 12px 15px;
+
+color: #FFFFFF;
+
+background: linear-gradient(
+    135deg,
+    #008DDB,
+    #00A8FF
+);
+
+border: none;
+border-radius: 8px;
+
+text-decoration: none;
+
+font-size: 11px;
+font-weight: 800;
+
+transition: all 0.3s ease;
+}
+
+.accessory-product-grid .btn:hover {
+background: linear-gradient(
+135deg,
+#00A8FF,
+#38C6FF
+);
+
+transform: translateY(-3px);
+
+box-shadow:
+    0 8px 25px rgba(0,168,255,0.22);
+}
+
+/* =========================================
+17. EMPTY PRODUCTS
+========================================= */
+
+.accessory-products .no-products {
+padding: 65px 20px;
+
+text-align: center;
+
+background: #102B49;
+
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 18px;
+}
+
+.accessory-products .no-products i {
+color: #38C6FF;
+
+font-size: 45px;
+
+margin-bottom: 20px;
+}
+
+.accessory-products .no-products h3 {
+color: #F1F7FF;
+
+font-size: 22px;
+
+margin-bottom: 10px;
+}
+
+.accessory-products .no-products p {
+color: #A9BDD3;
+
+font-size: 13px;
+}
+
+/* =========================================
+18. CONTACT BANNER
+========================================= */
+
+.contact-banner {
+position: relative;
+overflow: hidden;
+
+margin: 50px 7%;
+padding: 65px 30px;
+
+text-align: center;
+
+background:
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(0,168,255,0.25),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #061426,
+        #102B49
+    );
+
+border: 1px solid rgba(0,168,255,0.20);
+border-radius: 22px;
+}
+
+.contact-banner-content {
+max-width: 750px;
+margin: auto;
+
+position: relative;
+z-index: 2;
+}
+
+.contact-banner h2 {
+color: #F1F7FF;
+
+font-size: clamp(25px, 4vw, 40px);
+font-weight: 900;
+
+margin-bottom: 15px;
+}
+
+.contact-banner p {
+color: #A9BDD3;
+
+font-size: 14px;
+line-height: 1.8;
+
+margin-bottom: 25px;
+}
+
+.contact-banner .btn {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 12px;
+
+padding: 15px 25px;
+
+color: #FFFFFF;
+background: #00A8FF;
+
+border-radius: 9px;
+
+text-decoration: none;
+font-size: 12px;
+font-weight: 800;
+
+transition: 0.3s;
+}
+
+.contact-banner .btn:hover {
+background: #38C6FF;
+transform: translateY(-3px);
+}
+
+/* =========================================
+19. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1200px) {
+
+.accessory-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 992px) {
+
+.accessory-layout {
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 20px;
+}
+
+.accessory-sidebar {
+    padding: 18px;
+}
+
+.accessory-product-grid .product-image-container {
+    height: 210px;
+}
+}
+
+@media (max-width: 768px) {
+
+.accessories-hero {
+    min-height: 380px;
+    padding: 75px 6%;
+}
+
+.accessory-categories,
+.accessory-products-section {
+    padding: 60px 5%;
+}
+
+.accessory-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.accessory-category-card {
+    min-height: 165px;
+    padding: 20px 12px;
+}
+
+.accessory-layout {
+    grid-template-columns: 1fr;
+}
+
+.accessory-sidebar {
+    position: relative;
+    top: auto;
+}
+
+.accessory-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.accessory-product-grid .product-image-container {
+    height: 185px;
+}
+
+.accessory-product-grid .product-info {
+    padding: 15px;
+}
+
+.contact-banner {
+    margin: 35px 5%;
+    padding: 50px 20px;
+}
+}
+
+@media (max-width: 480px) {
+
+.accessories-hero {
+    min-height: 350px;
+    padding: 60px 5%;
+}
+
+.accessories-hero p {
+    font-size: 13px;
+}
+
+.accessories-hero-buttons {
+    gap: 10px;
+}
+
+.accessories-hero-buttons .btn {
+    padding: 12px 15px;
+    font-size: 10px;
+}
+
+.accessory-category-grid {
+    gap: 10px;
+}
+
+.accessory-category-card {
+    min-height: 145px;
+}
+
+.category-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.accessory-category-card h3 {
+    font-size: 13px;
+}
+
+.accessory-category-card span {
+    font-size: 9px;
+}
+
+.accessory-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.accessory-toolbar select {
+    width: 100%;
+}
+
+.accessory-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.accessory-product-grid .product-image-container {
+    height: 145px;
+}
+
+.accessory-product-grid .product-info {
+    padding: 11px;
+}
+
+.accessory-product-grid .product-info h3 {
+    font-size: 12px;
+}
+
+.accessory-product-grid .product-description {
+    font-size: 10px;
+    min-height: 60px;
+}
+
+.accessory-product-grid .product-price {
+    font-size: 13px;
+}
+
+.accessory-product-grid .btn {
+    min-height: 38px;
+    padding: 9px 5px;
+    font-size: 9px;
+}
+
+.accessory-product-grid .product-favourite {
+    width: 31px;
+    height: 31px;
+    font-size: 12px;
+}
+
+.contact-banner {
+    padding: 40px 18px;
+}
+}
+
+@media (max-width: 350px) {
+
+.accessory-category-grid,
+.accessory-product-grid {
+    grid-template-columns: 1fr;
+}
+
+.accessory-category-card {
+    min-height: 150px;
+}
+
+.accessory-product-grid .product-image-container {
+    height: 220px;
+}
+}
+
+/* =========================================
+20. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+.accessories-hero *,
+.accessory-category-card,
+.accessory-product-grid *,
+.contact-banner * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+}

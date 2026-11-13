@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Manage your account, orders, wishlist and personal information at KAS MOBILE STORE.">
+
+    <meta name="theme-color" content="#071b35">
+
+    <title>Customer Dashboard | KAS MOBILE STORE</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="customer-dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD WRAPPER
+    ========================================== -->
+
+    <div class="customer-dashboard">
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="customer-sidebar" id="customerSidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <div class="brand-text">
+                    <h2>KAS <span>MOBILE</span></h2>
+                    <p>CUSTOMER PORTAL</p>
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOMER PROFILE -->
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar" id="sidebarAvatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="profile-details">
+
+                    <h3 id="sidebarCustomerName">Customer</h3>
+
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="customer-navigation">
+
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a href="#overview" class="customer-nav-link active">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="#orders" class="customer-nav-link">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <span>My Orders</span>
+
+                    <span class="nav-badge" id="orderCountBadge">0</span>
+
+                </a>
+
+
+                <a href="wishlist.html" class="customer-nav-link">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <span>My Wishlist</span>
+
+                </a>
+
+
+                <a href="shop.html" class="customer-nav-link">
+
+                    <i class="fa-solid fa-store"></i>
+
+                    <span>Continue Shopping</span>
+
+                </a>
+
+
+                <p class="nav-heading account-heading">MY ACCOUNT</p>
+
+
+                <a href="#profile" class="customer-nav-link">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="#settings" class="customer-nav-link">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Account Settings</span>
+
+                </a>
+
+
+                <a href="contact.html" class="customer-nav-link">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <span>Customer Support</span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <div class="sidebar-help">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    <div>
+                        <h4>Need help?</h4>
+                        <p>We're here for you.</p>
+                    </div>
+
+                </div>
+
+
+                <button type="button" class="sidebar-logout" id="customerLogout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="customer-main">
+
+            <!-- TOP HEADER -->
+
+            <header class="customer-header">
+
+                <div class="header-left">
+
+                    <button type="button" id="customerMenuToggle"
+                        class="customer-menu-toggle"
+                        aria-label="Open navigation"
+                        aria-expanded="false">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+                    <div>
+
+                        <p class="header-subtitle">CUSTOMER PORTAL</p>
+
+                        <h2>My Dashboard</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <a href="shop.html" class="header-shop-button">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        <span>Shop Now</span>
+
+                    </a>
+
+
+                    <button type="button" class="notification-button"
+                        aria-label="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                    </button>
+
+
+                    <div class="header-avatar" id="headerAvatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================
+                 DASHBOARD OVERVIEW
+            ================================== -->
+
+            <section class="dashboard-section" id="overview">
+
+                <!-- WELCOME BANNER -->
+
+                <div class="welcome-banner">
+
+                    <div class="welcome-content">
+
+                        <span class="welcome-label">
+                            WELCOME BACK
+                        </span>
+
+                        <h1>Hello, <span id="welcomeCustomerName">Customer</span>!</h1>
+
+                        <p>
+                            Welcome to your KAS MOBILE STORE account.
+                            Manage your orders, explore products and enjoy shopping.
+                        </p>
+
+                        <a href="shop.html" class="welcome-shop-button">
+
+                            Start Shopping
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="welcome-illustration">
+
+                        <div class="illustration-circle">
+
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+
+                        </div>
+
+                        <div class="floating-icon floating-icon-one">
+                            <i class="fa-solid fa-headphones"></i>
+                        </div>
+
+                        <div class="floating-icon floating-icon-two">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+
+                <div class="customer-stats">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orders-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+                            <p>Total Orders</p>
+                            <h3 id="totalOrders">0</h3>
+                            <span>All your orders</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon pending-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+                            <p>Pending Orders</p>
+                            <h3 id="pendingOrders">0</h3>
+                            <span>Awaiting processing</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon completed-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div>
+                            <p>Completed Orders</p>
+                            <h3 id="completedOrders">0</h3>
+                            <span>Successfully completed</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon wishlist-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div>
+                            <p>Wishlist Items</p>
+                            <h3 id="wishlistCount">0</h3>
+                            <span>Your saved products</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 RECENT ORDERS
+            ================================== -->
+
+            <section class="dashboard-panel" id="orders">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">ORDER MANAGEMENT</span>
+
+                        <h2>Recent Orders</h2>
+
+                        <p>Track your latest purchases.</p>
+
+                    </div>
+
+                    <button type="button" class="view-all-button" id="viewAllOrders">
+
+                        View All
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="orders-table-wrapper">
+
+                    <table class="orders-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ORDER ID</th>
+
+                                <th>DATE</th>
+
+                                <th>PRODUCT</th>
+
+                                <th>TOTAL</th>
+
+                                <th>STATUS</th>
+
+                                <th>ACTION</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="customerOrdersTable">
+
+                            <tr class="empty-orders-row">
+
+                                <td colspan="6">
+
+                                    <div class="empty-orders">
+
+                                        <i class="fa-solid fa-box-open"></i>
+
+                                        <h3>No orders yet</h3>
+
+                                        <p>Your orders will appear here after shopping.</p>
+
+                                        <a href="shop.html">
+                                            Explore Products
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 CUSTOMER PROFILE
+            ================================== -->
+
+            <section class="dashboard-panel profile-panel" id="profile">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">PERSONAL INFORMATION</span>
+
+                        <h2>My Profile</h2>
+
+                        <p>Manage your personal account information.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-information">
+
+                    <div class="profile-large-avatar" id="profileAvatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="profile-information-details">
+
+                        <h3 id="profileCustomerName">Customer Name</h3>
+
+                        <p id="profileCustomerEmail">
+                            customer@example.com
+                        </p>
+
+                        <span class="account-status">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Registered Customer
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details-grid">
+
+                    <div class="profile-detail">
+
+                        <span>Full Name</span>
+
+                        <h4 id="customerFullName">Not available</h4>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>Email Address</span>
+
+                        <h4 id="customerEmail">Not available</h4>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>Phone Number</span>
+
+                        <h4 id="customerPhone">Not available</h4>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>Account Type</span>
+
+                        <h4>Customer</h4>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ACCOUNT SETTINGS
+            ================================== -->
+
+            <section class="dashboard-panel settings-panel" id="settings">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">ACCOUNT PREFERENCES</span>
+
+                        <h2>Account Settings</h2>
+
+                        <p>Manage your account preferences.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-list">
+
+                    <div class="setting-item">
+
+                        <div class="setting-icon">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+
+                        <div class="setting-description">
+
+                            <h4>Personal Information</h4>
+
+                            <p>View your registered account information.</p>
+
+                        </div>
+
+                        <a href="#profile" class="setting-action">
+                            View Profile
+                        </a>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div class="setting-description">
+
+                            <h4>Wishlist</h4>
+
+                            <p>View products you have saved.</p>
+
+                        </div>
+
+                        <a href="wishlist.html" class="setting-action">
+                            Open Wishlist
+                        </a>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div class="setting-description">
+
+                            <h4>Security</h4>
+
+                            <p>Manage your account security.</p>
+
+                        </div>
+
+                        <a href="account.html" class="setting-action">
+                            Account Page
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 FOOTER
+            ================================== -->
+
+            <footer class="customer-footer">
+
+                <p>
+                    &copy; <span id="currentYear"></span>
+                    KAS MOBILE STORE. All Rights Reserved.
+                </p>
+
+                <p>
+                    Premium Technology. Better Shopping.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- SIDEBAR OVERLAY -->
+
+    <div class="customer-sidebar-overlay" id="customerSidebarOverlay"></div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script type="module" src="customer-dashboard.js"></script>
+
+</body>
+
+</html>

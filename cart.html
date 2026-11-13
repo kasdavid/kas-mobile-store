@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="View and manage your shopping cart at KAS MOBILE STORE.">
+
+    <title>Shopping Cart | KAS MOBILE STORE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="cart-header">
+
+        <div class="cart-container header-content">
+
+            <a href="index.html" class="logo">
+                <i class="fas fa-mobile-screen-button"></i>
+                KAS <span>MOBILE STORE</span>
+            </a>
+
+            <nav class="header-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="shop.html">Shop</a>
+
+                <a href="wishlist.html">
+                    <i class="far fa-heart"></i> Wishlist
+                </a>
+
+                <a href="cart.html" class="active">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                </a>
+
+            </nav>
+
+            <a href="login.html" class="account-link">
+                <i class="far fa-user"></i> Account
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+    <section class="cart-hero">
+
+        <div class="cart-container">
+
+            <span class="cart-label">YOUR SHOPPING EXPERIENCE</span>
+
+            <h1>Shopping <span>Cart</span></h1>
+
+            <p>Review your selected products before proceeding to checkout.</p>
+
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Shopping Cart</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CART SECTION -->
+    <main class="cart-section">
+
+        <div class="cart-container">
+
+            <div class="cart-layout">
+
+                <!-- CART ITEMS -->
+                <section class="cart-products">
+
+                    <div class="cart-heading">
+
+                        <div>
+                            <h2>Your Products</h2>
+                            <p id="cartItemCount">0 items in your cart</p>
+                        </div>
+
+                        <button id="clearCartBtn" class="clear-cart-btn">
+                            <i class="fas fa-trash"></i>
+                            Clear Cart
+                        </button>
+
+                    </div>
+
+
+                    <!-- CART ITEMS WILL APPEAR HERE -->
+                    <div id="cartItems" class="cart-items">
+
+                        <div class="empty-cart">
+
+                            <i class="fas fa-shopping-basket"></i>
+
+                            <h3>Your cart is empty</h3>
+
+                            <p>You haven't added any products to your cart yet.</p>
+
+                            <a href="shop.html" class="shop-btn">
+                                <i class="fas fa-shopping-bag"></i>
+                                Start Shopping
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTINUE SHOPPING -->
+                    <div class="continue-shopping">
+
+                        <a href="shop.html">
+                            <i class="fas fa-arrow-left"></i>
+                            Continue Shopping
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ORDER SUMMARY -->
+                <aside class="cart-summary">
+
+                    <h2>Order Summary</h2>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row">
+
+                        <span>Subtotal</span>
+
+                        <strong id="cartSubtotal">K0.00</strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>Delivery Fee</span>
+
+                        <strong id="deliveryFee">K0.00</strong>
+
+                    </div>
+
+
+                    <div class="summary-row discount-row">
+
+                        <span>Discount</span>
+
+                        <strong id="cartDiscount">K0.00</strong>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-total">
+
+                        <span>Total</span>
+
+                        <strong id="cartTotal">K0.00</strong>
+
+                    </div>
+
+
+                    <p class="delivery-note">
+
+                        <i class="fas fa-truck"></i>
+
+                        Delivery charges will be confirmed during checkout.
+
+                    </p>
+
+
+                    <button id="checkoutBtn" class="checkout-btn" disabled>
+
+                        Proceed to Checkout
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="secure-payment">
+
+                        <i class="fas fa-lock"></i>
+
+                        Secure shopping experience
+
+                    </div>
+
+
+                    <!-- PAYMENT METHODS -->
+                    <div class="payment-methods">
+
+                        <span>We accept</span>
+
+                        <div class="payment-icons">
+
+                            <i class="fas fa-money-bill-wave"></i>
+
+                            <i class="fas fa-mobile-screen-button"></i>
+
+                            <i class="fas fa-credit-card"></i>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="cart-footer">
+
+        <div class="cart-container">
+
+            <p>
+                &copy; 2026 KAS MOBILE STORE.
+                All Rights Reserved.
+            </p>
+
+            <p>Technology Meets Convenience.</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="cart.js"></script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta name="description" content="Explore smartphones at KAS MOBILE STORE. Discover Samsung, iPhone, Tecno, Infinix and more.">
+
+<title>Mobile Phones | KAS MOBILE STORE</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mobile-phones.css">
+<link rel="stylesheet" href="responsive.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+<body>
+
+
+<!-- ANIMATED BACKGROUND -->
+<div class="animated-word-background">
+    <div class="word-track">
+        <div class="word-group">
+            <span>SMARTPHONES</span>
+            <span>KAS MOBILE STORE</span>
+            <span>PREMIUM PHONES</span>
+        </div>
+        <div class="word-group">
+            <span>SMARTPHONES</span>
+            <span>KAS MOBILE STORE</span>
+            <span>PREMIUM PHONES</span>
+        </div>
+    </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement-bar">
+    <p>
+        <i class="fas fa-mobile-alt"></i>
+        Welcome to KAS MOBILE STORE — Your Trusted Phone Shop
+    </p>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            <i class="fas fa-mobile-screen-button"></i>
+            <span>KAS <strong>MOBILE STORE</strong></span>
+        </a>
+
+        <form class="search-box" id="searchForm">
+            <input
+                type="search"
+                id="productSearch"
+                placeholder="Search mobile phones..."
+            >
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+
+        <div class="header-actions">
+
+            <a href="login.html" aria-label="Account">
+                <i class="far fa-user"></i>
+            </a>
+
+            <a href="wishlist.html" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+            </a>
+
+            <a href="cart.html" class="cart-link" aria-label="Shopping cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cartCount">0</span>
+            </a>
+
+        </div>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="main-navigation" id="mainNavigation">
+        <ul class="nav-menu">
+
+            <li><a href="index.html" class="nav-link">Home</a></li>
+
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+
+            <li>
+                <a href="mobile-phones.html" class="nav-link active">
+                    Mobile Phones
+                </a>
+            </li>
+
+            <li><a href="accessories.html" class="nav-link">Accessories</a></li>
+
+            <li><a href="audio.html" class="nav-link">Audio</a></li>
+
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+        </ul>
+    </nav>
+
+</header>
+
+
+<!-- PAGE HERO -->
+<section class="shop-hero">
+
+    <div class="shop-hero-content">
+
+        <span class="hero-label">
+            <i class="fas fa-mobile-screen-button"></i>
+            KAS MOBILE COLLECTION
+        </span>
+
+        <h1>Explore Our <span>Mobile Phones</span></h1>
+
+        <p>
+            Discover smartphones designed for performance,
+            entertainment, photography and everyday life.
+        </p>
+
+        <div class="shop-breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="shop.html">Shop</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Mobile Phones</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOBILE PHONES -->
+<section class="shop-section">
+
+    <div class="section-heading">
+        <span class="section-subtitle">SMARTPHONE COLLECTION</span>
+        <h2>Find Your Perfect <span>Phone</span></h2>
+        <p>Browse our available smartphones.</p>
+    </div>
+
+    <div class="shop-layout">
+
+        <!-- FILTER SIDEBAR -->
+        <aside class="shop-sidebar">
+
+            <div class="filter-header">
+                <h3><i class="fas fa-sliders-h"></i> Filters</h3>
+                <button id="clearFilters" type="button">Clear All</button>
+            </div>
+
+            <div class="filter-group">
+
+                <h4>Brands</h4>
+
+                <label>
+                    <input type="radio" name="brand" value="all" checked>
+                    All Brands
+                </label>
+
+                <label>
+                    <input type="radio" name="brand" value="apple">
+                    Apple
+                </label>
+
+                <label>
+                    <input type="radio" name="brand" value="samsung">
+                    Samsung
+                </label>
+
+                <label>
+                    <input type="radio" name="brand" value="tecno">
+                    Tecno
+                </label>
+
+                <label>
+                    <input type="radio" name="brand" value="infinix">
+                    Infinix
+                </label>
+
+                <label>
+                    <input type="radio" name="brand" value="redmi">
+                    Redmi
+                </label>
+
+            </div>
+
+            <div class="filter-group">
+
+                <h4>Availability</h4>
+
+                <label>
+                    <input type="checkbox" id="inStock">
+                    In Stock Only
+                </label>
+
+            </div>
+
+            <div class="filter-group">
+
+                <h4>Maximum Price (K)</h4>
+
+                <input
+                    type="number"
+                    id="maxPrice"
+                    placeholder="Enter maximum price"
+                    min="0"
+                >
+
+            </div>
+
+        </aside>
+
+
+        <!-- PRODUCTS -->
+        <div class="shop-products">
+
+            <div class="shop-toolbar">
+
+                <p id="productCount">Our smartphones</p>
+
+                <select id="sortProducts">
+                    <option value="default">Sort: Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+
+            </div>
+
+
+            <div class="product-grid" id="phoneProductGrid">
+
+                <!-- IPHONE -->
+                <article class="product-card"
+                    data-id="phone001"
+                    data-brand="apple"
+                    data-price="0"
+                    data-name="iPhone 15 Pro Max"
+                    data-stock="true">
+
+                    <div class="product-image-container">
+
+                        <span class="product-badge for-sale">Popular</span>
+
+                        <button class="product-favourite"
+                                type="button"
+                                aria-label="Add iPhone 15 Pro Max to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600"
+                            alt="iPhone smartphone"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">Apple</span>
+
+                        <h3>iPhone 15 Pro Max</h3>
+
+                        <p class="product-description">
+                            Premium smartphone with advanced camera technology.
+                        </p>
+
+                        <div class="product-price">Contact for price</div>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Enquire Now
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SAMSUNG -->
+                <article class="product-card"
+                    data-id="phone002"
+                    data-brand="samsung"
+                    data-price="0"
+                    data-name="Samsung Galaxy S24 Ultra"
+                    data-stock="true">
+
+                    <div class="product-image-container">
+
+                        <span class="product-badge for-sale">Featured</span>
+
+                        <button class="product-favourite"
+                                type="button"
+                                aria-label="Add Samsung Galaxy S24 Ultra to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600"
+                            alt="Samsung Galaxy smartphone"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">Samsung</span>
+
+                        <h3>Samsung Galaxy S24 Ultra</h3>
+
+                        <p class="product-description">
+                            Powerful performance and premium smartphone design.
+                        </p>
+
+                        <div class="product-price">Contact for price</div>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Enquire Now
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TECNO -->
+                <article class="product-card"
+                    data-id="phone003"
+                    data-brand="tecno"
+                    data-price="0"
+                    data-name="Tecno Camon Series"
+                    data-stock="true">
+
+                    <div class="product-image-container">
+
+                        <button class="product-favourite"
+                                type="button"
+                                aria-label="Add Tecno Camon to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+                            alt="Tecno style smartphone"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">Tecno</span>
+
+                        <h3>Tecno Camon Series</h3>
+
+                        <p class="product-description">
+                            Stylish smartphone for photography and daily use.
+                        </p>
+
+                        <div class="product-price">Contact for price</div>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Enquire Now
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- INFINIX -->
+                <article class="product-card"
+                    data-id="phone004"
+                    data-brand="infinix"
+                    data-price="0"
+                    data-name="Infinix Note Series"
+                    data-stock="true">
+
+                    <div class="product-image-container">
+
+                        <button class="product-favourite"
+                                type="button"
+                                aria-label="Add Infinix Note to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+                            alt="Infinix style smartphone"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">Infinix</span>
+
+                        <h3>Infinix Note Series</h3>
+
+                        <p class="product-description">
+                            Modern smartphone with a large display.
+                        </p>
+
+                        <div class="product-price">Contact for price</div>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Enquire Now
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- REDMI -->
+                <article class="product-card"
+                    data-id="phone005"
+                    data-brand="redmi"
+                    data-price="0"
+                    data-name="Redmi Note Series"
+                    data-stock="true">
+
+                    <div class="product-image-container">
+
+                        <button class="product-favourite"
+                                type="button"
+                                aria-label="Add Redmi Note to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600"
+                            alt="Redmi style smartphone"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">Redmi</span>
+
+                        <h3>Redmi Note Series</h3>
+
+                        <p class="product-description">
+                            A versatile smartphone for everyday performance.
+                        </p>
+
+                        <div class="product-price">Contact for price</div>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Enquire Now
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- APPLE -->
+                <article class="product-card"
+                    data-id="phone006"
+                    data-brand="apple"
+                    data-price="0"
+                    data-name="iPhone 13"
+                    data-stock="true">
+
+                    <div class="product-image-container">
+
+                        <button class="product-favourite"
+                                type="button"
+                                aria-label="Add iPhone 13 to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=600"
+                            alt="Apple smartphone"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">Apple</span>
+
+                        <h3>iPhone 13</h3>
+
+                        <p class="product-description">
+                            A reliable smartphone for everyday use.
+                        </p>
+
+                        <div class="product-price">Contact for price</div>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Enquire Now
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="no-products" id="noProducts" style="display:none;">
+                <i class="fas fa-mobile-screen-button"></i>
+                <h3>No phones found</h3>
+                <p>Try changing your filters.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT BANNER -->
+<section class="contact-banner">
+
+    <div class="contact-banner-content">
+
+        <h2>Need Help Choosing a Phone?</h2>
+
+        <p>
+            Contact KAS MOBILE STORE for product information
+            and availability.
+        </p>
+
+        <a href="contact.html" class="btn btn-primary">
+            Contact Our Store
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="main-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>KAS MOBILE STORE</h2>
+            <p>Your trusted destination for smartphones and accessories.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="mobile-phones.html">Mobile Phones</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Customer Service</h3>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">My Account</a>
+            <a href="cart.html">Shopping Cart</a>
+            <a href="wishlist.html">Wishlist</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            &copy; <span id="currentYear"></span>
+            KAS MOBILE STORE. All Rights Reserved.
+        </p>
+    </div>
+
+</footer>
+
+
+<script src="app.js"></script>
+<script src="mobile-phones.js"></script>
+
+
+</body>
+</html>
